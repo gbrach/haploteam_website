@@ -1,0 +1,47 @@
+// "Access our data!" button — Bootstrap 3 doesn't have btn-outline-primary
+.btn-outline-primary {
+    color: $haplo-violet;
+    background-color: transparent;
+    border: 2px solid $haplo-violet;
+    border-radius: 6px;
+    font-size: 22px;
+    font-weight: 700;
+    &:hover {
+        color: #ffffff;
+        background-color: $haplo-violet;
+        border-color: $haplo-violet;
+    }
+}
+
+// Page transitions (View Transitions API — Chrome 126+, degrades gracefully)
+@view-transition {
+    navigation: auto;
+}
+
+@keyframes vt-fade-in {
+    from { opacity: 0; transform: translateY(6px); }
+}
+
+@keyframes vt-fade-out {
+    to { opacity: 0; transform: translateY(-6px); }
+}
+
+::view-transition-old(root) {
+    animation: 180ms ease vt-fade-out;
+}
+
+::view-transition-new(root) {
+    animation: 220ms ease vt-fade-in;
+}
+
+// Scroll fade-in
+.fade-in-item {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.fade-in-item.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}

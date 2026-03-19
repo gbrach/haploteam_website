@@ -1,0 +1,88 @@
+<!-- paper entry layout -->
+<div class="papers-formatting">
+  <div class="paper-item">
+    <div class="paper-thumbnail">
+      <a data-title="{{ include.data.title }}">
+        <img src="{{ include.data.thumbnail }}" alt="{{ include.data.title }} thumbnail" loading="lazy">
+      </a>
+    </div>
+
+    <div class="paper-details">
+      <p>
+        {% assign author_list = include.data.authors | replace: " and ", ", " | replace: " & ", ", " | split: ", " %}
+        {% assign member_last_name = page.title | split: ' ' | last | downcase | strip | replace: "*", "" %}
+
+        {% for author in author_list %}
+          {% assign author_parts = author | split: ' ' %}
+          {% assign author_last_name = author_parts | last | downcase | strip | replace: "*", "" %}
+
+          {% if author_last_name == member_last_name %}
+            <strong>{{ author }}</strong>{% unless forloop.last %}, {% endunless %}
+          {% else %}
+            {{ author }}{% unless forloop.last %}, {% endunless %}
+          {% endif %}
+        {% endfor %}
+
+        <br>
+        {% if include.data.journal %}
+          <b>{{ include.data.title }}</b>.<br>
+          <i>{{ include.data.journal }}</i>.
+        {% else %}
+          <b>Preprint:</b> {{ include.data.title }}.
+        {% endif %}
+
+        {% if include.data.doi %}
+          <br>DOI: <a href="https://doi.org/{{ include.data.doi }}" target="_blank">{{ include.data.doi }}</a>
+        {% endif %}
+        (<b>{{ include.data.year }}</b>).
+      </p>
+
+      <div class="icons-formatting">
+        {% if include.data.PMID %}
+          <a href="https://www.ncbi.nlm.nih.gov/pubmed/{{ include.data.PMID }}" target="_blank" title="PubMed">
+            <i class="ai ai-pubmed"></i>
+          </a>
+        {% endif %}
+        {% if include.data.doi %}
+          <a href="https://doi.org/{{ include.data.doi }}" target="_blank" title="DOI">
+            <i class="ai ai-doi"></i>
+          </a>
+        {% endif %}
+        {% if include.data.bioRxiv %}
+          <a href="{{ include.data.bioRxiv }}" target="_blank" title="bioRxiv">
+            <i class="ai ai-biorxiv"></i>
+          </a>
+        {% endif %}
+        {% if include.data.google_scholar %}
+          <a href="{{ include.data.google_scholar }}" target="_blank" title="Google Scholar">
+            <i class="ai ai-google-scholar"></i>
+          </a>
+        {% endif %}
+        {% if include.data.github %}
+          <a href="https://github.com/{{ include.data.github }}" target="_blank" title="GitHub Repository">
+            <i class="fa fa-github"></i>
+          </a>
+        {% endif %}
+        {% if include.data.ftp_link %}
+          <a href="{{ include.data.ftp_link[0].link }}" target="_blank" title="FTP Resource">
+            <i class="fa-solid fa-database"></i>
+          </a>
+        {% endif %}
+        {% if include.data.zenodo %}
+          {% for repo in include.data.zenodo %}
+            <a href="{{ repo.link }}" target="_blank" title="Zenodo Repository {{ forloop.index }}">
+              <i class="ai ai-zenodo"></i>
+            </a>
+          {% endfor %}
+        {% endif %}
+        {% if include.data.websites %}
+          {% for website in include.data.websites %}
+            <a href="{{ website.url }}" target="_blank" title="Website {{ forloop.index }}">
+              <i class="fa-solid fa-globe"></i>
+            </a>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

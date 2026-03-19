@@ -1,0 +1,45 @@
+---
+layout: home
+category: home
+---
+
+<!-- Home page and haploteam picture -->
+  <div class="first_part_mainpage">
+    {% include header.html %}
+    <h1>Proud to be yeast geneticists</h1>
+  </div>
+
+  <div class="containerpluslogo">
+    <img src="assets/haploteam_pictures/gallery/ekiden2025_cropped.webp" loading="lazy" alt="Snapshot of the group participating in the 2025 Ekiden">
+  </div>
+
+  <hr>
+
+  <div class="multichoice_bubbles">
+    <div class="container-fluid">
+      <h3>Our latest published papers:</h3>
+    </div>
+  </div>
+
+  {% assign this_year = site.time | date: '%Y' | plus: 0 %}
+  {% assign last_year = this_year | minus: 1 %}
+  {% assign base_papers = site.papers | where_exp: "paper", "paper.layout != 'index_page'" | sort: 'pub_date' | reverse %}
+  {% assign current_papers = base_papers | where: "year", this_year %}
+  {% assign last_year_papers = base_papers | where: "year", last_year %}
+  {% assign prioritized_papers = current_papers | concat: last_year_papers %}
+  {% assign displayed = 0 %}
+
+  {% for paper in prioritized_papers %}
+    {% if displayed >= 2 %}
+      {% break %}
+    {% endif %}
+    {% if paper.mainpage == true or paper.mainpage == nil %}
+      {% include paper_builder.html data=paper %}
+      {% assign displayed = displayed | plus: 1 %}
+    {% endif %}
+  {% endfor %}
+
+  <!-- <div class="containerpluslogo">
+    <img src="assets/haploteam_pictures/wordcloud_2024.webp" loading="lazy" alt="HaploTeam Wordcloud 2024">
+    <p>Wordcloud generated using <a href="https://github.com/rdmorin/scholargoggler">scholargoggler</a>, get your own!</p>
+  </div> -->

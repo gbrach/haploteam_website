@@ -1,0 +1,745 @@
+---
+---
+
+@font-face {
+	font-family:'Unistra A';
+	src:	url('https://s3.unistra.fr/master/common/assets/fonts/unistra-font/1.0.0/fonts/UnistraA-Regular.eot?AWSAccessKeyId=M2M78RKXPAP75Y692QZX&Signature=7jfdHGloNOE3QZ0yiqGES4eTCRk%3D&Expires=1870941572');
+	src:	url('https://s3.unistra.fr/master/common/assets/fonts/unistra-font/1.0.0/fonts/UnistraA-Regular.eot?AWSAccessKeyId=M2M78RKXPAP75Y692QZX&Signature=7jfdHGloNOE3QZ0yiqGES4eTCRk%3D&Expires=1870941572&#iefix') format('embedded-opentype'),
+			url('https://s3.unistra.fr/master/common/assets/fonts/unistra-font/1.0.0/fonts/UnistraA-Regular.woff2?AWSAccessKeyId=M2M78RKXPAP75Y692QZX&Signature=Jc877H2QWC8nCT9%2BvglLY8jj54Q%3D&Expires=1870941570') format('woff2'),
+			url('https://s3.unistra.fr/master/common/assets/fonts/unistra-font/1.0.0/fonts/UnistraA-Regular.woff?AWSAccessKeyId=M2M78RKXPAP75Y692QZX&Signature=76jAZD8ftu7ItXYNf2Gnvb91uXI%3D&Expires=1870941571') format('woff'),
+			url('https://s3.unistra.fr/master/common/assets/fonts/unistra-font/1.0.0/fonts/UnistraA-Regular.svg?AWSAccessKeyId=M2M78RKXPAP75Y692QZX&Signature=DthzEcdekNlkte5hDjh9lwx5u1A%3D&Expires=1870941571') format('svg');
+	font-weight: 400;
+	font-style: normal;
+}
+
+// important variables
+$base-font-family: 'Unistra A', sans-serif;
+$base-font-size:   20px;
+$title-font-size: 70px; /* used for the main haploteam page */
+$very-large-font-size: 50px; /* used for titles */
+$larger-font-size: 32px; /* used small titles */
+$large-font-size:  $base-font-size * 1.15;
+$small-font-size:  $base-font-size * 0.85;
+$base-line-height: 1.2;
+
+
+$spacing-unit:     30px;
+$main-black-color:	#000000; /* main font color, as well as the footer's */
+$haplo-violet:		#424dad; /* complementary color : pills at the top, links, ... */
+$background-color:	#ffffff; /* center piece color */
+$grey-color:		#bcbcbc; /* sides color */
+$grey-color-light:	#dddddd; /* lighter grey color, used in scss files by default */
+$grey-color-dark:	#555555; /* darker grey color, used in scss files by default */
+$footer-color:		#000000; /* footer color */
+$haplo-dark-blue:	#131940; /* title color */
+$haplo-light-blue:  #1d255a; /* lighter blue */
+$link-not-visited:  #4878c4; /* link color */
+$link-visited:      #704299; /* link color */
+
+$on-laptop:        800px;
+
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
+// Import partials from _sass
+@import
+"base",
+"layout",
+"home",
+"syntax-highlighting";
+
+// This block is used to set the gray backgroud and the main white center page as well as the font color
+html {
+	// background-color: $haplo-dark-blue; /* sides color — disabled, using background-image instead */
+	background-image: url('{{ site.baseurl }}/assets/background.webp');
+	scroll-behavior: smooth;
+}
+
+body {
+	max-width: 1000px; /* max width of the page */
+	margin: 0 auto;
+	background-color: $background-color; /* background color */
+	color: $main-black-color; /* main font color */
+}
+
+h4 {
+	font-size: 28px;
+}
+
+h5 {
+	font-size: 24px;
+}
+
+// formatting of the hyperlinks
+a {
+	color: $link-not-visited;
+	text-decoration: none;
+
+	&:visited {
+		color: $link-visited; //darken($haplo-dark-blue, 25%);
+	}
+
+	&:hover {
+		color: $main-black-color;
+		text-decoration: none;
+	}
+}
+
+.container-fluid {
+	width: 100%;
+	padding: 0;
+}
+
+// This block sets a tiny margin so that the text isn't stuck to the gray backgroud.
+.row {
+	margin: 0;
+}
+
+.header {
+	margin: 0 90px 0 0; /* margin of the header, 90px padding on the right */
+	padding: 0;
+	color: $main-black-color;
+}
+
+.nav, .nav-pills {
+	padding: 0px; /* top padding */
+	margin: 0px;
+}
+
+.nav ul {
+	list-style-type: none;
+	float: right;
+	padding: 0px;
+	margin: 0px;
+}
+
+.nav li {
+	height: 35px;
+	display: inline-block;
+	margin: 15px 5px 0 20px;
+	padding: 0px;
+	text-align: center;
+	line-height: 100%;
+}
+
+.nav > li > a {
+	font-family: "UnistraA-Regular", sans-serif;
+	font-size: $large-font-size; /* Pill font size */
+	font-weight: 700; /* Pill font boldness */
+	color: $main-black-color; /* Pill font color */
+	padding: 15px 10px; /* Pill padding, vertical and horizontal */
+	text-decoration: none;
+}
+
+.nav>li>a:hover {
+	text-decoration: none;
+	color: $haplo-violet;
+	border-bottom: solid $haplo-violet 4px; /* pill underline */
+	border-radius: 4px;
+	background-color: transparent;
+}
+
+.nav-pills li.active a {
+	background-color: $haplo-violet;
+	border-radius: 0;
+	border-bottom: solid $haplo-violet 10px;
+	border-radius: 6px;
+}
+
+.nav-pills li.active a:hover {
+	background-color: $haplo-violet; /* When hovering over a selected pill, set the same color so that it doesn't change */
+}
+
+
+
+// Haploteam title on the main page
+.first_part_mainpage {
+	// Haploteam main title
+	h1 {
+		padding: 35px 0 0 0px; /* padding of the title */		margin: 0 0;
+		font-weight: 700;
+		font-size: $title-font-size*.8;
+		color: $haplo-dark-blue;
+		text-align: center;
+	}
+}
+
+
+// Proud to be yeast geneticists paragraph, right below the main team picture
+.second_part_mainpage {
+	color: $main-black-color;
+	margin: 0px 0px 00px;; // 20px to separate the paragraph from the next title
+
+	div {
+		text-align: justify;
+		text-justify: inter-word;
+	  }
+
+	.row {
+		margin: 0px 6% 0px 6%;
+	}
+
+	h3 {
+		padding: 0;
+		margin: 30px 30px 0 0;
+		font-weight: 800;
+		font-size: $very-large-font-size;
+		text-align: left;
+		color: $haplo-dark-blue;
+	}
+
+	p {
+		padding: 0px;
+	}
+
+}
+
+// This block sets parameters for the multichoice menu with pictures
+.multichoice_bubbles {
+	margin: 0px 0;
+
+	h3 {
+		color: $haplo-dark-blue;
+		font-weight: 600;
+		margin: 0px 0 10px;
+		font-size: $very-large-font-size;
+		text-align: center;
+
+	}
+
+	.col-4 {
+		position: relative;
+	}
+
+	.pic {
+		opacity: 0.4;
+		position: relative;
+		margin: auto;
+	}
+
+	.caption {
+		color: $haplo-dark-blue;
+		font-weight: 800;
+		font-size: $very-large-font-size * 0.9;
+		text-decoration: none;
+		line-height: 120%;
+		text-align: center;
+		position: absolute;
+		top: 50%;
+	    left: 50%;
+	    transform: translate(-50%, -50%);
+	}
+
+	a:hover {
+		.pic {
+			opacity: 0.9;
+		}
+		.caption {
+			color: $haplo-dark-blue;
+			/* https://stackoverflow.com/a/8712442 adding a little white border around the hovered text */
+			/// Stroke font-character
+			/// @param  {Integer} $stroke - Stroke width
+			/// @param  {Color}   $color  - Stroke color
+			/// @return {List}            - text-shadow list
+			@function stroke($stroke, $color) {
+				$shadow: ();
+				$from: $stroke*-1;
+				@for $i from $from through $stroke {
+				@for $j from $from through $stroke {
+					$shadow: append($shadow, $i*1px $j*1px 0 $color, comma);
+				}
+				}
+				@return $shadow;
+			}
+			/// Stroke font-character
+			/// @param  {Integer} $stroke - Stroke width
+			/// @param  {Color}   $color  - Stroke color
+			/// @return {Style}           - text-shadow
+			@mixin stroke($stroke, $color) {
+				text-shadow: stroke($stroke, $color);
+			}
+			text-shadow: 1px 1px 0 #ffffff,
+			-1px 1px 0 #ffffff,
+			1px -1px 0 #ffffff,
+			-1px -1px 0 #ffffff,
+			0px 1px 0 #ffffff,
+
+		}
+	}
+}
+
+// default page style (excluding the homepage)
+.default-wrapper {
+	margin: 0px 4% 0px 4%;
+}
+
+.vcenter {
+    display: flex;
+    align-items: center;
+}
+
+
+h2 {
+	color: $haplo-dark-blue;
+	font-weight: 600;
+	font-size: $very-large-font-size;
+}
+
+h3 {
+	color: $haplo-dark-blue;
+	font-weight: 600;
+	font-size: $larger-font-size;
+}
+
+// styling of the members page pictures grid
+.members_page_grid {
+	padding: 0 10px;
+
+	.row {
+		margin-bottom: 10px;
+	}
+
+	[class^="col-"] {
+		padding: 5px;
+	}
+
+	// member card wrapper
+	a.member-card {
+		display: block;
+		position: relative;
+		overflow: hidden;
+		padding: 0;
+	}
+
+	.responsive-pic-member {
+		width: 100%;
+		height: auto;
+		border-radius: 8px;
+		object-fit: cover;
+		opacity: 0.3;
+		transition: opacity 0.2s ease;
+	}
+
+	a:hover .responsive-pic-member {
+		opacity: 1.0;
+	}
+
+	.caption {
+		color: $haplo-light-blue;
+		font-size: clamp(18px, 3.5vw, 30px);
+		font-weight: 800;
+		line-height: 130%;
+		text-align: center;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+		transition: opacity 0.2s ease, visibility 0.2s ease;
+	}
+
+	a:hover .caption {
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	@media (max-width: 768px) {
+		[class^="col-"] {
+			padding: 3px;
+		}
+	}
+}
+
+// styling of the individual member page
+.member-page-individual {
+	padding: 20px;
+
+	.container-fluid {
+		margin: 0;
+		padding: 0;
+	}
+
+	/* name formatting */
+	h1 {
+		color: $haplo-dark-blue;
+		font-weight: 800;
+		font-size: clamp(24px, 5vw, 36px);
+		margin: 20px 0px 10px;
+	}
+
+	/* font awesome icons color */
+	.fa-icon-color {
+		color: $haplo-violet;
+	}
+
+	/* font awesome icons formatting */
+	.icons {
+		padding: 0px;
+		padding-bottom: 10px;
+		margin: 0px;
+
+		a {
+			font-size: 24px;
+			color: $haplo-violet;
+			margin-right: 10px;
+			transition: color 0.3s ease, transform 0.3s ease;
+
+			i {
+				transition: inherit;
+			}
+
+			&:hover i {
+				color: $haplo-light-blue;
+				transform: scale(1.1);
+			}
+		}
+	}
+
+	/* profile image */
+	img {
+		max-width: 450px;
+		width: 100%;
+		height: auto;
+		border-radius: 8px;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	}
+
+	@media (max-width: 992px) {
+		img {
+			max-width: 55%;
+			display: block;
+			margin: 20px auto;
+		}
+		h1 {
+			font-size: 28px;
+		}
+	}
+
+	@media (max-width: 768px) {
+		img {
+			max-width: 70%;
+		}
+	}
+
+	@media (max-width: 500px) {
+		img {
+			max-width: 100%;
+		}
+	}
+
+	/* sub-titles formatting */
+	h2 {
+		color: $haplo-dark-blue;
+		font-weight: 800;
+		font-size: $larger-font-size * 1.1;
+		padding: 0px;
+		margin: 0px;
+	}
+
+	/* papers text color and year headings */
+	.publications {
+		color: #000000;
+
+		h2 {
+			font-size: 26px;
+			margin-top: 40px;
+			margin-bottom: 20px;
+			color: $haplo-dark-blue;
+		}
+
+		h3 {
+			font-size: 22px;
+			color: $haplo-light-blue;
+			margin-top: 20px;
+		}
+	}
+
+	/* 7/12th are reserved for the text */
+	.col-md-7 {
+		padding: 0;
+	}
+
+	ol {
+		margin-left: 0px;
+		list-style: none; /* removing list nums */
+	}
+}
+
+// styling of the papers page constructor
+.papers-formatting {
+
+	/* put the icons on the same line as the rest of the paper information*/
+	.icons-formatting {
+		display: inline-block;
+
+		a {
+			text-decoration: none;
+		}
+	}
+}
+
+// styling of the publications page
+.publications-page {
+
+	padding: 10px 0 0 0;
+
+	/* font awesome icons color */
+	.fa-icon-color {
+		color: $haplo-violet;
+	}
+
+	h3 {
+		color: $haplo-dark-blue;
+		font-weight: 700;
+		font-size: $very-large-font-size;
+		padding: 0px;
+		margin: 10px 0px 10px 40px;
+	}
+
+	ul {
+		padding: 0;
+		margin: 0 -20px;
+		list-style: none; /* Remove bullets */
+	}
+
+}
+
+// This block sets the footer attributes
+.footer {
+	background-color: $footer-color;
+	color: #ffffff;
+	font-weight: 50;
+	margin-top: 30px;
+	padding: 20px 0 20px 0;
+
+	.container-fluid {
+		margin: 0 auto;
+		padding: 0 40px;
+	}
+	.row {
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	.col-md-5 {
+		padding: 0;
+		margin: 0;
+	}
+	p {
+		padding: 0;
+		margin: 0;
+	}
+	a, a:hover {
+		color: #ffffff;
+		text-decoration: none;
+	}
+
+	.icon > svg > path {
+		fill: #ffffff;
+	}
+
+	.copy {
+		text-align: right;
+	}
+	.address {
+		font-size: 18px;
+	}
+}
+
+// Christmas lights
+$globe-width:   14px;
+$globe-height:  32px;
+$globe-spacing: 38px;
+$globe-spread: 3px;
+$light-off-opacity: 0.3;
+
+.lightrope {
+  text-align: left; // aligning lights to the start of the "whitespace"
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+  margin: 65px 0 0 0;  // -15px
+  padding: 0;
+  pointer-events: none;
+  width: 100%;
+  li {
+    position: relative;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+    width: $globe-width;
+    height: $globe-height;
+    border-radius: 50%;
+    margin: $globe-spacing/2;
+    display: inline-block;
+    background: rgb(234, 160, 2);
+    box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(0,247,165,1);
+    animation-name: flash-1;
+    animation-duration: 2s;
+    &:nth-child(2n+1) {
+      background: rgba(0, 255, 255, 1);
+      box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(0,255,255,0.5);
+      animation-name: flash-2;
+      animation-duration: 0.4s;
+    }
+    &:nth-child(4n+2) {
+      background: rgba(247, 0, 148, 1);
+      box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(247,0,148,1);
+      animation-name: flash-3;
+      animation-duration: 1.1s;
+    }
+    &:nth-child(odd) {
+      animation-duration: 1.8s;
+    }
+    &:nth-child(3n+1) {
+      animation-duration: 1.4s;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      background: #222;
+      width: ($globe-width - 2);
+      height: $globe-height/3;
+      border-radius: 3px;
+      top: (0 - ($globe-height/6));
+      left: 1px;
+    }
+    &:after {
+      content: "";
+      top: (0 - $globe-height/2);
+      left: $globe-width - 3;
+      position: absolute;
+      width: $globe-spacing + 12;
+      height: ($globe-height/3 * 2);
+      border-bottom: solid #222 2px;
+      border-radius: 50%;
+    }
+    &:last-child:after {
+      content: none;
+    }
+    &:first-child {
+      margin-left: -$globe-spacing;
+    }
+  }
+}
+@keyframes flash-1 {
+    0%, 100% { background: rgba(234, 160, 2, 1);
+    box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(234, 160, 2, 1);}
+    50% { background: rgba(234, 160, 2, $light-off-opacity);
+    box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(0, 0, 0, 0.2);}
+}
+@keyframes flash-2 {
+    0%, 100% { background: rgba(0,255,255,1);
+    box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(0,255,255,1);}
+    50% { background: rgba(0,255,255,$light-off-opacity);
+    box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(0,255,255,0.2);}
+}
+@keyframes flash-3 {
+    0%, 100% { background: rgba(247,0,148,1);
+    box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(247,0,148,1);}
+    50% { background: rgba(247,0,148,$light-off-opacity);
+    box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(247,0,148,0.2);}
+}
+
+
+// ============================================================
+// Mobile responsiveness
+// ============================================================
+@media (max-width: 600px) {
+
+    // --- reduce base font size ---
+    body {
+        font-size: 16px;
+    }
+
+    // --- scale down section headings ---
+    h2 {
+        font-size: $larger-font-size; // 32px instead of 50px
+    }
+
+    h3 {
+        font-size: $large-font-size; // ~23px instead of 32px
+    }
+
+    // --- header: stack logo + nav vertically ---
+    .header {
+        margin: 0;
+        padding: 8px 10px;
+
+        .container-fluid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .pull-right {
+            float: none;
+            width: 100%;
+        }
+
+        .nav-pills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 4px;
+        }
+
+        .nav li {
+            height: auto;
+            margin: 4px 2px;
+        }
+
+        .nav > li > a {
+            font-size: $base-font-size * 0.85;
+            padding: 8px 8px;
+        }
+    }
+
+    // --- homepage title ---
+    .first_part_mainpage h1 {
+        font-size: 28px;
+        padding: 16px 10px 0;
+    }
+
+    // --- section headings on multichoice / publications ---
+    .multichoice_bubbles h3 {
+        font-size: $larger-font-size;
+    }
+
+    .publications-page h3 {
+        font-size: $larger-font-size;
+        margin-left: 10px;
+    }
+
+    // --- member grid: 2 columns on small screens ---
+    .members_page_grid [class^="col-"] {
+        width: 50%;
+    }
+
+    // --- footer: stack columns and center ---
+    .footer {
+        .col-xs-4,
+        .col-xs-8 {
+            width: 100%;
+            text-align: center;
+        }
+
+        .pull-left,
+        .copy {
+            float: none;
+            text-align: center;
+        }
+    }
+
+    // --- tighten default page wrapper ---
+    .default-wrapper {
+        margin: 0 2%;
+    }
+}

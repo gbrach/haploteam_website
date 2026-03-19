@@ -1,0 +1,96 @@
+---
+layout: default
+---
+
+<!-- displaying the member's details -->
+<div class="member-page-individual container-fluid py-4">
+  <div class="row">
+    <div class="col-12 col-md-7">
+      <h1>{{ page.title }}</h1>
+      <div class="icons mb-3">
+        <!-- adding icons for contact information and links -->
+        {% if page.email %}
+          <a href="mailto:{{ page.email | encode_email }}">
+            <i class="fas fa-envelope"></i>
+          </a>
+        {% endif %}
+        {% if page.twitter %}
+          <a href="https://x.com/{{ page.twitter }}" target="_blank">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+        {% endif %}
+        {% if page.orcid %}
+          <a href="https://orcid.org/{{ page.orcid }}" target="_blank">
+            <i class="ai ai-orcid"></i>
+          </a>
+        {% endif %}
+        {% if page.google_scholar %}
+          <a href="{{ page.google_scholar }}" target="_blank">
+            <i class="ai ai-google-scholar"></i>
+          </a>
+        {% endif %}
+        {% if page.website %}
+          <a href="{{ page.website }}" target="_blank">
+            <i class="fas fa-globe"></i>
+          </a>
+        {% endif %}
+        {% if page.github %}
+          <a href="https://github.com/{{ page.github }}" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        {% endif %}
+        {% if page.thesis %}
+          <a href="{{ page.thesis }}" target="_blank">
+            <i class="fas fa-graduation-cap"></i>
+          </a>
+        {% endif %}
+      </div>
+
+      <!-- displaying the position information -->
+      <p>
+        <b>{{ page.position }}</b> in the Haploteam.
+      </p>
+
+      <!-- displaying additional content or bio -->
+      <p>{{ page.content }}</p>
+    </div>
+
+    <!-- adding spacing for layout balance -->
+    <div class="col-12 col-md-1"></div>
+
+    <!-- displaying profile image -->
+    <div class="col-12 col-md-4 text-center">
+      <img class="img-fluid rounded" src="{{ page.picture }}" alt="{{ page.name }}" loading="lazy" onerror="this.src='../assets/images/missing.webp'" />
+    </div>
+  </div>
+
+  <!-- assigning the member's URL slug -->
+  {% assign member = page.url | remove:'/members/' | remove:'.html' %}
+  {% assign member_papers = site.array %}
+
+  <!-- collecting papers authored by the member -->
+  {% for paper in site.papers reversed %}
+    {% if paper.members contains member %}
+      {% assign member_papers = member_papers | push: paper %}
+    {% endif %}
+  {% endfor %}
+
+  {% assign paper_count = member_papers | size %}
+
+  <!-- displaying the list of papers, grouped by year -->
+  {% if paper_count > 0 %}
+    <h2>Papers in the HaploTeam</h2>
+    {% assign unique_years = member_papers | map: 'year' | uniq | sort | reverse %}
+    {% for year in unique_years %}
+      {% assign papers_array = member_papers | where: "year", year | sort: 'pub_date' | reverse %}
+      <div class="publications">
+        <h3>{{ year }}</h3>
+        {% for paper in papers_array %}
+          {% if paper.layout != "index_page" %}
+            {% include paper_builder.html data=paper %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endfor %}
+  {% endif %}
+</div>

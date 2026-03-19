@@ -1,0 +1,33 @@
+# Site settings
+title: The Haploteam Website
+email: schacherer@unistra.fr
+description: > # this means to ignore newlines until "baseurl:"
+   Welcome to the HaploTeam website, a research group based at the University of Strasbourg, led by Pr. Joseph Schacherer.
+## https://talk.jekyllrb.com/t/jekyll-and-link-to-internal-files-page-not-found/6182/3
+url: https://www.haploteam.org # the base hostname & protocol for your site
+# baseurl: /haploteam/ # the subpath of your site, e.g. /blog/
+x_username: haploteam # jo_schacherer
+array: []
+
+# Build settings
+markdown: kramdown
+
+collections:
+  members:
+    output: true
+  papers:
+    output: true
+  software:
+    output: false
+  posts:
+    output: false
+  news:
+    output: false
+  ourdata:
+    output: true
+
+
+plugins:
+  - jekyll-feed
+  - jekyll-email-protect
+  - jekyll-sitemap

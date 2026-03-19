@@ -1,0 +1,28 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="description" content="{{ site.description }}">
+
+    <!-- Open Graph / social preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ page.url | prepend: site.url }}">
+    <meta property="og:title" content="{% if page.title %}{{ page.title }} — HaploTeam{% else %}{{ site.title }}{% endif %}">
+    <meta property="og:description" content="{{ site.description }}">
+    <meta property="og:image" content="{{ site.url }}/assets/images/haplologo.webp">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@{{ site.x_username }}">
+    <meta name="twitter:image" content="{{ site.url }}/assets/images/haplologo.webp">
+
+    <link rel="stylesheet" type='text/css' href="{{ "/css/bootstrap.min.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" type='text/css' href="{{ "/css/main.css" | prepend: site.baseurl }}">
+
+    <script src="https://kit.fontawesome.com/5f5a3428ff.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ "/css/academicons.css" | prepend: site.baseurl }}" />
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+
+    {% include google_analytics.html %}
+</head>

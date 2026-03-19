@@ -1,0 +1,25 @@
+<script>
+(function() {
+    // adding fade-in class to target elements
+    var selectors = ['.paper-item', '.member-card', '.image-container'];
+    selectors.forEach(function(sel) {
+        document.querySelectorAll(sel).forEach(function(el) {
+            el.classList.add('fade-in-item');
+        });
+    });
+
+    // triggering fade-in as elements enter the viewport
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.fade-in-item').forEach(function(el) {
+        observer.observe(el);
+    });
+})();
+</script>

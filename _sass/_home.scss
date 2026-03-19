@@ -1,0 +1,204 @@
+// Styles shared by the home and data landing pages
+.papers-formatting {
+  margin: 10px auto;
+  max-width: 750px;
+}
+
+.paper-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  max-height: none;
+  overflow: visible;
+}
+
+.paper-item:hover {
+  background-color: #eaeaea;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.paper-thumbnail {
+  flex: 0 0 300px;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paper-thumbnail img {
+  width: 300px;
+  height: auto;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+
+.paper-thumbnail img:hover {
+  transform: scale(1.05);
+}
+
+.paper-details {
+  flex: 1;
+  overflow: visible;
+}
+
+.paper-details p {
+  font-size: 20px;
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 5px;
+}
+
+.paper-details a {
+  color: #6e4895;
+  text-decoration: none;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.paper-details a:hover {
+  color: $haplo-violet;
+  text-decoration: underline;
+}
+
+.paper-title {
+  font-size: 24px;
+  color: $haplo-dark-blue;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.icons-formatting {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.icons-formatting a {
+  font-size: 24px;
+  color: #6e4895;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.icons-formatting a:hover {
+  color: $haplo-violet;
+  transform: scale(1.05);
+}
+
+.containerpluslogo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.containerpluslogo img {
+  max-width: 650px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.project-section {
+  margin-bottom: 60px;
+}
+
+.project-section .paper-item {
+  margin-bottom: 30px;
+}
+
+.project-title {
+  color: $haplo-light-blue;
+  font-size: $very-large-font-size;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.project-section .paper-thumbnail {
+  margin-right: 30px;
+}
+
+.project-section .paper-thumbnail img {
+  width: 120px;
+}
+
+.paper-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.link-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.paper-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #6e4895;
+  font-size: 20px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.paper-link:hover {
+  color: $haplo-violet;
+  transform: translateY(-2px);
+}
+
+.fa-icon-color {
+  font-size: 24px;
+  color: $haplo-violet;
+}
+
+.link-text {
+  font-size: 20px;
+}
+
+@media (max-width: 768px) {
+  .paper-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .paper-thumbnail {
+    margin-right: 0;
+    margin-bottom: 10px;
+    flex: 0 0 200px;
+  }
+
+  .paper-thumbnail img {
+    width: 200px;
+  }
+
+  .project-section .paper-thumbnail {
+    margin-bottom: 15px;
+  }
+
+  .project-section .paper-thumbnail img {
+    width: 100px;
+  }
+
+  .project-title {
+    font-size: $very-large-font-size * 0.8;
+    margin-bottom: 20px;
+  }
+
+  .link-group {
+    justify-content: center;
+  }
+
+  .link-text {
+    font-size: 18px;
+  }
+}

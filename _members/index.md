@@ -1,9 +1,9 @@
 ---
 layout: index_page
-title: Haploteam members
+title: HaploTeam members
 ---
 
-The members of our Haploteam are listed below. Click on their names to see their profiles!
+The members of our HaploTeam are listed below. Click on their names to see their profiles!
 
 <h3>Current members</h3>
 {% assign page_array = site.members | where:"status", "current" %}

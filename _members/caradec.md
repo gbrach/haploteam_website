@@ -6,4 +6,5 @@ title: Claudia Caradec
 picture: /assets/haploteam_pictures/members/caradec.webp
 position: Research Engineer
 email: claudia.caradec@unistra.fr
+location: SBX
 ---

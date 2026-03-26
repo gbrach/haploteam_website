@@ -1,18 +1,24 @@
 ---
 layout: index_page
-title: Haploteam members
+title: HaploTeam members
 ---
 
-The members of our Haploteam are listed below. Click on their names to see their profiles!
+The members of our HaploTeam are listed below. Click on their names to see their profiles!
 
 <h3>Current members</h3>
+
+<p class="halo-legend">
+  <span class="halo-legend-label halo-label-sbx">SBX</span>
+  <span class="halo-legend-label halo-label-bio">BIO</span>
+  <span class="halo-legend-label halo-label-both">Both</span>
+</p>
+
 {% assign page_array = site.members | where:"status", "current" %}
 {% include picture_grid.html pages=page_array columns=3 %}
 
 <!-- <h3>Former members</h3>
-
 {% assign page_array = site.members | where:"status", "alumni" %}
-{% include picture_grid.html pages=page_array columns=4	%} -->
+{% include picture_grid.html pages=page_array columns=4 %} -->
 
 <style>
   .gallery {

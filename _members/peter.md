@@ -6,4 +6,5 @@ title: Jackson Peter
 picture: /assets/images/...
 position: PhD
 thesis: https://theses.fr/2017STRAJ064
+location: SBX
 ---

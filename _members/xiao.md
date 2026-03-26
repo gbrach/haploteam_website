@@ -8,4 +8,5 @@ picture: /assets/haploteam_pictures/members/xiao.webp
 joined_lab: 2026
 left_lab:
 position: PhD candidate
+location: SBX
 ---

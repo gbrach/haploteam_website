@@ -10,4 +10,5 @@ github: jnrunge
 google_scholar: https://scholar.google.com/citations?user=OFktklAAAAAJ&hl=en
 orcid: 0000-0002-0450-9897
 website: https://janniklasrunge.de/
+location: SBX
 ---

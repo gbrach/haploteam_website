@@ -8,4 +8,5 @@ joined_lab: 2024
 left_lab:
 position: Research Engineer
 orcid:
+location: SBX
 ---

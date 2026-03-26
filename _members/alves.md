@@ -8,4 +8,5 @@ left_lab:
 position: Researcher
 email: tavaresalves@unistra.fr
 google_scholar: https://scholar.google.com/citations?hl=en&user=In3JrxoAAAAJ
+location: SBX
 ---

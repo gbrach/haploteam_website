@@ -8,9 +8,17 @@
 	  {% if member_page.layout != "index_page" %}
 		{% if column_index == 0 %}<div class="row">{% endif %}
 		{% assign column_index = column_index | plus: 1 %}
+		{% assign loc = member_page.location | default: "SBX" %}
+		{% if loc contains "SBX" and loc contains "BIO" %}
+		  {% assign halo_class = "halo-both" %}
+		{% elsif loc contains "BIO" %}
+		  {% assign halo_class = "halo-bio" %}
+		{% else %}
+		  {% assign halo_class = "halo-sbx" %}
+		{% endif %}
 		<div class="col-xs-{{width}}">
 		  <a href="{{ site.baseurl }}{{ member_page.url }}" class="member-card">
-			<div style="position: relative;">
+			<div class="{{ halo_class }}" style="position: relative;">
 			  <img class="responsive-pic-member"
 			       src="{{ member_page.picture }}"
 			       alt="{{ member_page.title }}"

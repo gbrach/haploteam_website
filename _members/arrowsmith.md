@@ -6,4 +6,5 @@ title: Sam Arrowsmith
 picture: /assets/images/....
 email: sarrowsmith@unistra.fr
 position: PhD candidate
+location: SBX
 ---

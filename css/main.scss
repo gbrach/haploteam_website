@@ -14,27 +14,27 @@
 
 // important variables
 $base-font-family: 'Unistra A', sans-serif;
-$base-font-size:   20px;
+$base-font-size: 20px;
 $title-font-size: 70px; /* used for the main haploteam page */
 $very-large-font-size: 50px; /* used for titles */
 $larger-font-size: 32px; /* used small titles */
-$large-font-size:  $base-font-size * 1.15;
-$small-font-size:  $base-font-size * 0.85;
+$large-font-size: $base-font-size * 1.15;
+$small-font-size: $base-font-size * 0.85;
 $base-line-height: 1.2;
 
 
-$spacing-unit:     30px;
-$main-black-color:	#000000; /* main font color, as well as the footer's */
-$haplo-violet:		#424dad; /* complementary color : pills at the top, links, ... */
-$background-color:	#ffffff; /* center piece color */
-$grey-color:		#bcbcbc; /* sides color */
-$grey-color-light:	#dddddd; /* lighter grey color, used in scss files by default */
-$grey-color-dark:	#555555; /* darker grey color, used in scss files by default */
-$footer-color:		#000000; /* footer color */
-$haplo-dark-blue:	#131940; /* title color */
-$haplo-light-blue:  #1d255a; /* lighter blue */
-$link-not-visited:  #4878c4; /* link color */
-$link-visited:      #704299; /* link color */
+$spacing-unit: 30px;
+$main-black-color: #000000; /* main font color, as well as the footer's */
+$haplo-violet: #424dad; /* complementary color : pills at the top, links, ... */
+$background-color: #ffffff; /* center piece color */
+$grey-color: #bcbcbc; /* sides color */
+$grey-color-light: #dddddd; /* lighter grey color, used in scss files by default */
+$grey-color-dark: #555555; /* darker grey color, used in scss files by default */
+$footer-color: #000000; /* footer color */
+$haplo-dark-blue: #131940; /* title color */
+$haplo-light-blue: #1d255a; /* lighter blue */
+$link-not-visited: #4878c4; /* link color */
+$link-visited: #704299; /* link color */
 
 $on-laptop:        800px;
 
@@ -93,7 +93,7 @@ a {
 	padding: 0;
 }
 
-// This block sets a tiny margin so that the text isn't stuck to the gray backgroud.
+// tiny margin so that the text isn't stuck to the gray backgroud
 .row {
 	margin: 0;
 }
@@ -127,10 +127,10 @@ a {
 
 .nav > li > a {
 	font-family: "UnistraA-Regular", sans-serif;
-	font-size: $large-font-size; /* Pill font size */
-	font-weight: 700; /* Pill font boldness */
-	color: $main-black-color; /* Pill font color */
-	padding: 15px 10px; /* Pill padding, vertical and horizontal */
+	font-size: $large-font-size; /* pill font size */
+	font-weight: 700; /* pill font boldness */
+	color: $main-black-color; /* pill font color */
+	padding: 15px 10px; /* pill padding, vertical and horizontal */
 	text-decoration: none;
 }
 
@@ -155,11 +155,12 @@ a {
 
 
 
-// Haploteam title on the main page
+// HaploTeam title on the main page
 .first_part_mainpage {
-	// Haploteam main title
+	// HaploTeam main title
 	h1 {
-		padding: 35px 0 0 0px; /* padding of the title */		margin: 0 0;
+		padding: 35px 0 0 0px; /* padding of the title */
+		margin: 0 0;
 		font-weight: 700;
 		font-size: $title-font-size*.8;
 		color: $haplo-dark-blue;
@@ -254,10 +255,10 @@ a {
 				}
 				@return $shadow;
 			}
-			/// Stroke font-character
-			/// @param  {Integer} $stroke - Stroke width
-			/// @param  {Color}   $color  - Stroke color
-			/// @return {Style}           - text-shadow
+			/// stroke font-character
+			/// @param  {Integer} $stroke - stroke width
+			/// @param  {Color}   $color  - stroke color
+			/// @return {Style} - text-shadow
 			@mixin stroke($stroke, $color) {
 				text-shadow: stroke($stroke, $color);
 			}
@@ -310,7 +311,7 @@ h3 {
 	a.member-card {
 		display: block;
 		position: relative;
-		overflow: hidden;
+		overflow: visible; // allowing halo glow to render outside the image bounds
 		padding: 0;
 	}
 
@@ -319,7 +320,7 @@ h3 {
 		height: auto;
 		border-radius: 8px;
 		object-fit: cover;
-		opacity: 0.3;
+		opacity: 0.25; // lower = more white wash = name pops more
 		transition: opacity 0.2s ease;
 	}
 
@@ -327,7 +328,24 @@ h3 {
 		opacity: 1.0;
 	}
 
+	// location halos — glow only, no hard ring
+	.halo-sbx {
+		border-radius: 8px;
+		box-shadow: 0 0 8px 3px rgba(74, 144, 217, 0.25); // Strasbourg: blue
+	}
+
+	.halo-bio {
+		border-radius: 8px;
+		box-shadow: 0 0 8px 3px rgba(231, 76, 60, 0.25); // Bilbao: red
+	}
+
+	.halo-both {
+		border-radius: 8px;
+		box-shadow: 0 0 8px 3px rgba(155, 89, 182, 0.25); // both: purple
+	}
+
 	.caption {
+
 		color: $haplo-light-blue;
 		font-size: clamp(18px, 3.5vw, 30px);
 		font-weight: 800;
@@ -352,6 +370,25 @@ h3 {
 		}
 	}
 }
+
+// legend — outside grid so styles actually apply
+.halo-legend {
+	font-size: 13px;
+	margin-bottom: 12px;
+	display: flex;
+	align-items: center;
+	gap: 16px;
+}
+
+.halo-legend-label {
+	font-size: 18px;
+	font-weight: 600;
+	opacity: 0.8;
+}
+
+.halo-label-sbx  { color: rgb(74, 144, 217); }
+.halo-label-bio  { color: rgb(231, 76, 60); }
+.halo-label-both { color: rgb(155, 89, 182); }
 
 // styling of the individual member page
 .member-page-individual {

@@ -11,6 +11,17 @@ Use the `paper_template.md` file, duplicate and rename it, fill in the blanks an
 
 ## Local development
 ```
+# if not done previously
+brew install ruby-install chruby
+ruby-install ruby
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
+source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+chruby ruby-3.3.0
+>> ~/.zshrc 
+
+source ~/.zshrc # to override the default ruby
 bundle exec jekyll serve --livereload
 ```
 

@@ -12,6 +12,7 @@ but i dont want he sa
 ## Local development
 Just install a recent Ruby version (3.3.0 right now):
 ```
+# if not done previously
 brew install ruby-install chruby
 ruby-install ruby
 

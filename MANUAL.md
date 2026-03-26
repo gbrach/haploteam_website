@@ -7,6 +7,7 @@ The site is built with **Jekyll** (a static site generator). There is no databas
 
 ## Table of Contents
 
+0. [Prerequisites (first-time setup)](#0-prerequisites-first-time-setup)
 1. [Overview of the folder structure](#1-overview-of-the-folder-structure)
 2. [Adding a new member](#2-adding-a-new-member)
 3. [Moving a member to alumni](#3-moving-a-member-to-alumni)
@@ -15,6 +16,51 @@ The site is built with **Jekyll** (a static site generator). There is no databas
 6. [Updating the gallery (Members page)](#6-updating-the-gallery-members-page)
 7. [Image conversion reference](#7-image-conversion-reference)
 8. [Building and deploying the site](#8-building-and-deploying-the-site)
+
+---
+
+## 0. Prerequisites (first-time setup)
+
+You only need to do this once on a new machine.
+
+### Homebrew (macOS package manager)
+
+If Homebrew is not already installed:
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+### ImageMagick (for image conversion — Section 7)
+
+```bash
+brew install imagemagick
+```
+
+Verify the install:
+```bash
+magick --version
+```
+
+### Ruby + Bundler (for local site preview — Section 8)
+
+macOS ships with an old system Ruby that should not be used. Install a proper version via Homebrew:
+
+```bash
+brew install ruby
+```
+
+Then follow the instructions printed by Homebrew to add the new Ruby to your PATH (you will need to add a line to your `~/.zshrc` or `~/.bash_profile`). After restarting your terminal:
+
+```bash
+gem install bundler
+```
+
+Finally, install the project's dependencies from the repo root:
+```bash
+bundle install
+```
+
+You only need to run `bundle install` once (and again if `Gemfile` ever changes).
 
 ---
 
@@ -273,29 +319,29 @@ The gallery is organized in rows of 3 images. Add a new `<div class="row">...</d
 
 ## 7. Image conversion reference
 
-All image resizing and conversion can be done with **ImageMagick** (`convert` command).
+All image resizing and conversion can be done with **ImageMagick v7** (`magick` command). Install it with `brew install imagemagick` (see [Section 0](#0-prerequisites-first-time-setup)).
 
-**Convert a member photo (resize to 600 px wide, export as WebP):**
+**Convert a member photo (resize to 600 px, export as WebP):**
 ```bash
-convert input.jpg -resize 600x600\> -quality 85 lastname.webp
+magick input.jpg -resize 600x600\> -quality 85 lastname.webp
 ```
 The `\>` means "only shrink, never enlarge".
 
 **Convert a paper thumbnail (resize to 400 px tall, export as WebP):**
 ```bash
-convert input.png -resize x400 -quality 85 2025_firstauthor.webp
+magick input.png -resize x400 -quality 85 2025_firstauthor.webp
 ```
 
 **Batch convert all JPGs in a folder:**
 ```bash
 for f in *.jpg; do
-  convert "$f" -resize 600x600\> -quality 85 "${f%.jpg}.webp"
+  magick "$f" -resize 600x600\> -quality 85 "${f%.jpg}.webp"
 done
 ```
 
 **Check an image's dimensions:**
 ```bash
-identify filename.webp
+magick identify filename.webp
 ```
 
 ---

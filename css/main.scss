@@ -51,6 +51,46 @@ $on-laptop:        800px;
 "home",
 "syntax-highlighting";
 
+// CSS custom properties for theming
+:root {
+	--bg-color: #{$background-color};
+	--text-color: #{$main-black-color};
+	--heading-color: #{$haplo-dark-blue};
+	--heading-light-color: #{$haplo-light-blue};
+	--link-color: #{$link-not-visited};
+	--link-visited: #{$link-visited};
+	--accent-color: #{$haplo-violet};
+	--footer-bg: #{$footer-color};
+	--footer-text: #ffffff;
+	--paper-card-bg: #f5f5f5;
+	--border-color: #ccc;
+	--search-focus-border: #66afe9;
+	--no-results-color: #888;
+	--nav-text: #{$main-black-color};
+}
+
+[data-theme="dark"] {
+	--bg-color: #1c1c1c;
+	--text-color: #efefef;
+	--heading-color: #f0d080;
+	--heading-light-color: #e0c470;
+	--link-color: #80d0b0;
+	--link-visited: #d4b868;
+	--accent-color: #e0b050;
+	--footer-bg: #141414;
+	--footer-text: #d8d8d8;
+	--paper-card-bg: #2a2a2a;
+	--border-color: #555;
+	--search-focus-border: #d4a55a;
+	--no-results-color: #bbb;
+	--nav-text: #e8e8e8;
+}
+
+// Smooth theme transition
+body, .header, .footer, .paper-item, .nav > li > a, a, h1, h2, h3, h4, .caption {
+	transition: color 0.3s ease, background-color 0.3s ease;
+}
+
 // This block is used to set the gray backgroud and the main white center page as well as the font color
 html {
 	// background-color: $haplo-dark-blue; /* sides color — disabled, using background-image instead */
@@ -58,11 +98,37 @@ html {
 	scroll-behavior: smooth;
 }
 
+[data-theme="dark"] {
+	background-image: url('{{ site.baseurl }}/assets/background.webp');
+	background-color: #111;
+	// darken the background image
+	&::before {
+		content: '';
+		position: fixed;
+		top: 0; left: 0; right: 0; bottom: 0;
+		background: rgba(0, 0, 0, 0.6);
+		z-index: -1;
+	}
+
+	// make logo blend with the dark page background
+	.header img[alt="HaploTeam logo"] {
+		filter: invert(1) hue-rotate(180deg) brightness(1.2);
+		background-color: var(--bg-color);
+		border-radius: 6px;
+		padding: 4px;
+	}
+
+	// footer link colors
+	.footer a, .footer a:hover, .footer a:visited {
+		color: var(--footer-text);
+	}
+}
+
 body {
 	max-width: 1000px; /* max width of the page */
 	margin: 0 auto;
-	background-color: $background-color; /* background color */
-	color: $main-black-color; /* main font color */
+	background-color: var(--bg-color);
+	color: var(--text-color);
 }
 
 h4 {
@@ -75,15 +141,15 @@ h5 {
 
 // formatting of the hyperlinks
 a {
-	color: $link-not-visited;
+	color: var(--link-color);
 	text-decoration: none;
 
 	&:visited {
-		color: $link-visited; //darken($haplo-dark-blue, 25%);
+		color: var(--link-visited);
 	}
 
 	&:hover {
-		color: $main-black-color;
+		color: var(--text-color);
 		text-decoration: none;
 	}
 }
@@ -101,7 +167,7 @@ a {
 .header {
 	margin: 0 90px 0 0; /* margin of the header, 90px padding on the right */
 	padding: 0;
-	color: $main-black-color;
+	color: var(--nav-text);
 }
 
 .nav, .nav-pills {
@@ -129,28 +195,28 @@ a {
 	font-family: "UnistraA-Regular", sans-serif;
 	font-size: $large-font-size; /* pill font size */
 	font-weight: 700; /* pill font boldness */
-	color: $main-black-color; /* pill font color */
+	color: var(--nav-text); /* pill font color */
 	padding: 15px 10px; /* pill padding, vertical and horizontal */
 	text-decoration: none;
 }
 
 .nav>li>a:hover {
 	text-decoration: none;
-	color: $haplo-violet;
-	border-bottom: solid $haplo-violet 4px; /* pill underline */
+	color: var(--accent-color);
+	border-bottom: solid var(--accent-color) 4px; /* pill underline */
 	border-radius: 4px;
 	background-color: transparent;
 }
 
 .nav-pills li.active a {
-	background-color: $haplo-violet;
+	background-color: var(--accent-color);
 	border-radius: 0;
-	border-bottom: solid $haplo-violet 10px;
+	border-bottom: solid var(--accent-color) 10px;
 	border-radius: 6px;
 }
 
 .nav-pills li.active a:hover {
-	background-color: $haplo-violet; /* When hovering over a selected pill, set the same color so that it doesn't change */
+	background-color: var(--accent-color); /* When hovering over a selected pill, set the same color so that it doesn't change */
 }
 
 
@@ -163,7 +229,7 @@ a {
 		margin: 0 0;
 		font-weight: 700;
 		font-size: $title-font-size*.8;
-		color: $haplo-dark-blue;
+		color: var(--heading-color);
 		text-align: center;
 	}
 }
@@ -171,7 +237,7 @@ a {
 
 // Proud to be yeast geneticists paragraph, right below the main team picture
 .second_part_mainpage {
-	color: $main-black-color;
+	color: var(--text-color);
 	margin: 0px 0px 00px;; // 20px to separate the paragraph from the next title
 
 	div {
@@ -189,7 +255,7 @@ a {
 		font-weight: 800;
 		font-size: $very-large-font-size;
 		text-align: left;
-		color: $haplo-dark-blue;
+		color: var(--heading-color);
 	}
 
 	p {
@@ -203,7 +269,7 @@ a {
 	margin: 0px 0;
 
 	h3 {
-		color: $haplo-dark-blue;
+		color: var(--heading-color);
 		font-weight: 600;
 		margin: 0px 0 10px;
 		font-size: $very-large-font-size;
@@ -222,7 +288,7 @@ a {
 	}
 
 	.caption {
-		color: $haplo-dark-blue;
+		color: var(--heading-color);
 		font-weight: 800;
 		font-size: $very-large-font-size * 0.9;
 		text-decoration: none;
@@ -284,13 +350,13 @@ a {
 
 
 h2 {
-	color: $haplo-dark-blue;
+	color: var(--heading-color);
 	font-weight: 600;
 	font-size: $very-large-font-size;
 }
 
 h3 {
-	color: $haplo-dark-blue;
+	color: var(--heading-color);
 	font-weight: 600;
 	font-size: $larger-font-size;
 }
@@ -298,13 +364,22 @@ h3 {
 // styling of the members page pictures grid
 .members_page_grid {
 	padding: 0 10px;
+	display: flex;
+	flex-wrap: wrap;
 
-	.row {
-		margin-bottom: 10px;
+	.member-grid-item {
+		width: 33.333%;
+		padding: 5px;
+		box-sizing: border-box;
 	}
 
-	[class^="col-"] {
-		padding: 5px;
+	// 4-column variant for alumni
+	&.grid-cols-4 .member-grid-item {
+		width: 25%;
+	}
+
+	&.grid-cols-4 .caption {
+		font-size: clamp(14px, 2.5vw, 22px);
 	}
 
 	// member card wrapper
@@ -346,7 +421,7 @@ h3 {
 
 	.caption {
 
-		color: $haplo-light-blue;
+		color: var(--heading-light-color);
 		font-size: clamp(18px, 3.5vw, 30px);
 		font-weight: 800;
 		line-height: 130%;
@@ -365,8 +440,24 @@ h3 {
 	}
 
 	@media (max-width: 768px) {
-		[class^="col-"] {
+		.member-grid-item {
+			width: 50%;
 			padding: 3px;
+		}
+
+		// 4-col grid also goes to 2 on tablet
+		&.grid-cols-4 .member-grid-item {
+			width: 50%;
+		}
+	}
+
+	@media (max-width: 400px) {
+		.member-grid-item {
+			width: 100%;
+		}
+
+		&.grid-cols-4 .member-grid-item {
+			width: 50%;
 		}
 	}
 }
@@ -401,7 +492,7 @@ h3 {
 
 	/* name formatting */
 	h1 {
-		color: $haplo-dark-blue;
+		color: var(--heading-color);
 		font-weight: 800;
 		font-size: clamp(24px, 5vw, 36px);
 		margin: 20px 0px 10px;
@@ -409,7 +500,7 @@ h3 {
 
 	/* font awesome icons color */
 	.fa-icon-color {
-		color: $haplo-violet;
+		color: var(--accent-color);
 	}
 
 	/* font awesome icons formatting */
@@ -420,7 +511,7 @@ h3 {
 
 		a {
 			font-size: 24px;
-			color: $haplo-violet;
+			color: var(--accent-color);
 			margin-right: 10px;
 			transition: color 0.3s ease, transform 0.3s ease;
 
@@ -429,7 +520,7 @@ h3 {
 			}
 
 			&:hover i {
-				color: $haplo-light-blue;
+				color: var(--heading-light-color);
 				transform: scale(1.1);
 			}
 		}
@@ -469,7 +560,7 @@ h3 {
 
 	/* sub-titles formatting */
 	h2 {
-		color: $haplo-dark-blue;
+		color: var(--heading-color);
 		font-weight: 800;
 		font-size: $larger-font-size * 1.1;
 		padding: 0px;
@@ -478,18 +569,18 @@ h3 {
 
 	/* papers text color and year headings */
 	.publications {
-		color: #000000;
+		color: var(--text-color);
 
 		h2 {
 			font-size: 26px;
 			margin-top: 40px;
 			margin-bottom: 20px;
-			color: $haplo-dark-blue;
+			color: var(--heading-color);
 		}
 
 		h3 {
 			font-size: 22px;
-			color: $haplo-light-blue;
+			color: var(--heading-light-color);
 			margin-top: 20px;
 		}
 	}
@@ -525,11 +616,11 @@ h3 {
 
 	/* font awesome icons color */
 	.fa-icon-color {
-		color: $haplo-violet;
+		color: var(--accent-color);
 	}
 
 	h3 {
-		color: $haplo-dark-blue;
+		color: var(--heading-color);
 		font-weight: 700;
 		font-size: $very-large-font-size;
 		padding: 0px;
@@ -546,8 +637,8 @@ h3 {
 
 // This block sets the footer attributes
 .footer {
-	background-color: $footer-color;
-	color: #ffffff;
+	background-color: var(--footer-bg);
+	color: var(--footer-text);
 	font-weight: 50;
 	margin-top: 30px;
 	padding: 20px 0 20px 0;
@@ -569,13 +660,13 @@ h3 {
 		padding: 0;
 		margin: 0;
 	}
-	a, a:hover {
-		color: #ffffff;
+	a, a:hover, a:visited {
+		color: var(--footer-text);
 		text-decoration: none;
 	}
 
 	.icon > svg > path {
-		fill: #ffffff;
+		fill: var(--footer-text);
 	}
 
 	.copy {
@@ -755,9 +846,32 @@ $light-off-opacity: 0.3;
         margin-left: 10px;
     }
 
-    // --- member grid: 2 columns on small screens ---
-    .members_page_grid [class^="col-"] {
-        width: 50%;
+    // --- filter bar: stack vertically on mobile ---
+    .filter-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .year-filters {
+        width: 100%;
+    }
+
+    #searchInput {
+        width: 100% !important;
+    }
+
+    // --- back to top: smaller on mobile ---
+    #backToTop {
+        bottom: 16px;
+        right: 16px;
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+    }
+
+    // --- alumni toggle text ---
+    .alumni-toggle h3 {
+        font-size: $large-font-size;
     }
 
     // --- footer: stack columns and center ---

@@ -95,9 +95,9 @@ Adding a member requires two things: a **photo file** and a **text file**.
 | Property | Requirement |
 |----------|-------------|
 | Format   | **WebP** (strongly preferred) |
-| Width    | **600 px** (the site will display it smaller, but 600 px is the right source size) |
-| Height   | **600 px** |
-| File size | Should be **under 100 KB** after conversion (see [Section 7](#7-image-conversion-reference)) |
+| Width    | **700 px** (the site will display it smaller, but 700 px is the right source size) |
+| Height   | **700 px** |
+| File size | Should ideally be **under 100 KB** after conversion (see [Section 7](#7-image-conversion-reference)) |
 | Filename | `lastname.webp` — all lowercase, no spaces, no accents |
 
 Place the file in:
@@ -185,7 +185,7 @@ status: alumni
 ```
 
 Optionally add a `thesis:` field if they defended.
-You do **not** need to move or rename any file. The member will automatically appear in the "Former members" section.
+You do **not** need to move or rename any file. The member will automatically appear in the "Former members" section, or, as of March 2026, not be displayed. Maybe this is going to be changed.
 
 ---
 
@@ -195,12 +195,11 @@ Adding a paper requires two things: a **thumbnail image** and a **text file**.
 
 ### Step 1 — Prepare the thumbnail
 
-The thumbnail is the key figure from the paper (typically Figure 1 or the graphical abstract).
+The thumbnail is the key figure from the paper.
 
 | Property | Requirement |
 |----------|-------------|
 | Format | **WebP** strongly preferred. PNG or JPG tolerated. |
-| Height | **400 px** (width can vary depending on the figure's aspect ratio) |
 | File size | ideally small |
 | Filename | `YEAR_firstauthorlastname.webp` — all lowercase |
 
@@ -227,7 +226,7 @@ title: "Full Paper Title, can use <i>italics</i> for species names"
 year: 2025
 pub_date: 2025-06-15
 members: [ lastname1, lastname2, schacherer ]
-authors: Firstname1 Lastname1, Firstname2 Lastname2, ..., Joseph Schacherer
+authors: Firstname1 Lastname1, Firstname2 Lastname2, ...
 journal: Nature (hopefully :) )
 doi: 10.1038/s41467-000-00000-0
 PMID: 12345678
@@ -272,9 +271,6 @@ ftp_link:
     link: "ftp://example.org/path/"
 ```
 
-**Tip — members field:**
-Only list members who are (or were) in the Haploteam, not all co-authors. A member slug must match an existing file in `_members/`. Unknown slugs are silently ignored.
-
 ---
 
 ## 5. Updating the homepage photo
@@ -318,14 +314,6 @@ The gallery is hardcoded in `_members/index.md`. Scroll to the `<!-- Gallery lay
 Place the photo file in `assets/haploteam_pictures/gallery/`.
 
 The gallery is organized in rows of 3 images. Add a new `<div class="row">...</div>` block if starting a new row.
-
-Recommended specs for gallery photos:
-
-| Property | Recommendation |
-|----------|----------------|
-| Format | WebP |
-| Width | 900–1200 px |
-| File size | Under 400 KB |
 
 ---
 

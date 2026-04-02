@@ -8,4 +8,5 @@ picture: /assets/haploteam_pictures/members/thiele.webp
 joined_lab: 2022
 left_lab:
 position: PhD candidate
+location: SBX
 ---

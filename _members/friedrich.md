@@ -8,4 +8,5 @@ picture: /assets/haploteam_pictures/members/friedrich.webp
 joined_lab: a long time ago
 left_lab:
 position: Researcher
+location: SBX
 ---

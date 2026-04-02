@@ -1,16 +1,27 @@
-<div class="members_page_grid">
-	{% assign columns = include.columns %}
-	{% assign width = 12 | divided_by: include.columns %}
-	{% assign column_index = 0 %}
+<div class="members_page_grid grid-cols-{{ include.columns }}">
 	{% assign pages_sorted = include.pages | sort: 'rank' %}
 
 	{% for member_page in pages_sorted %}
 	  {% if member_page.layout != "index_page" %}
-		{% if column_index == 0 %}<div class="row">{% endif %}
-		{% assign column_index = column_index | plus: 1 %}
-		<div class="col-xs-{{width}}">
+		{% assign loc = member_page.location | default: "SBX" %}
+		{% if site.show_locations %}
+			{% if loc contains "SBX" and loc contains "BIO" %}
+			  {% assign halo_class = "halo-both" %}
+			  {% assign loc_tag = "both" %}
+			{% elsif loc contains "BIO" %}
+			  {% assign halo_class = "halo-bio" %}
+			  {% assign loc_tag = "BIO" %}
+			{% else %}
+			  {% assign halo_class = "halo-sbx" %}
+			  {% assign loc_tag = "SBX" %}
+			{% endif %}
+		{% else %}
+			{% assign halo_class = "" %}
+			{% assign loc_tag = "" %}
+		{% endif %}
+		<div class="member-grid-item" data-location="{{ loc_tag }}">
 		  <a href="{{ site.baseurl }}{{ member_page.url }}" class="member-card">
-			<div style="position: relative;">
+			<div class="{{ halo_class }}" style="position: relative;">
 			  <img class="responsive-pic-member"
 			       src="{{ member_page.picture }}"
 			       alt="{{ member_page.title }}"
@@ -20,9 +31,6 @@
 			</div>
 		  </a>
 		</div>
-		{% if column_index == columns %}</div>{% assign column_index = 0 %}{% endif %}
 	  {% endif %}
 	{% endfor %}
-
-	{% if column_index != 0 %}</div>{% endif %}
 </div>

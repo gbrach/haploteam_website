@@ -8,8 +8,9 @@ Use the `member_template.md` file, duplicate and rename it, fill in the blanks a
 ## To add a paper
 Use the `paper_template.md` file, duplicate and rename it, fill in the blanks and put it in the `_papers` folder. Thumbnail goes into `assets/papers_thumbnails`, any size is fine but rectangular is better.
 
-
+but i dont want he sa
 ## Local development
+Just install a recent Ruby version (3.3.0 right now):
 ```
 # if not done previously
 brew install ruby-install chruby

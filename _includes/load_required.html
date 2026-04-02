@@ -3,15 +3,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+    <link rel="icon" type="image/webp" href="{{ site.baseurl }}/assets/images/haplologo.webp">
+    <link rel="apple-touch-icon" href="{{ site.baseurl }}/assets/images/haplologo.webp">
 
     <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-    <meta name="description" content="{{ site.description }}">
+    {% if page.description %}{% assign meta_description = page.description %}{% else %}{% assign meta_description = site.description %}{% endif %}
+    <meta name="description" content="{{ meta_description }}">
 
     <!-- Open Graph / social preview -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ page.url | prepend: site.url }}">
     <meta property="og:title" content="{% if page.title %}{{ page.title }} — HaploTeam{% else %}{{ site.title }}{% endif %}">
-    <meta property="og:description" content="{{ site.description }}">
+    <meta property="og:description" content="{{ meta_description }}">
     <meta property="og:image" content="{{ site.url }}/assets/images/haplologo.webp">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@{{ site.x_username }}">
@@ -23,6 +26,44 @@
     <script src="https://kit.fontawesome.com/5f5a3428ff.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ "/css/academicons.css" | prepend: site.baseurl }}" />
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+
+    <!-- Dark mode: apply saved theme (or OS preference) before paint to avoid flash -->
+    <script>
+      (function() {
+        var theme = localStorage.getItem('theme');
+        if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
+
+    <!-- Dark mode toggle logic -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var btn = document.getElementById('theme-toggle');
+        if (!btn) return;
+        var icon = btn.querySelector('i');
+
+        function updateIcon() {
+          var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+          icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+        }
+
+        updateIcon();
+
+        btn.addEventListener('click', function() {
+          var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+          if (isDark) {
+            document.documentElement.removeAttribute('data-theme');
+            localStorage.removeItem('theme');
+          } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+          }
+          updateIcon();
+        });
+      });
+    </script>
 
     {% include google_analytics.html %}
 </head>

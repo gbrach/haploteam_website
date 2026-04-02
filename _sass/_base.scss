@@ -5,8 +5,8 @@ body {
     font-size: $base-font-size;
     line-height: $base-line-height;
     font-weight: 300;
-    color: $main-black-color;
-    background-color: $background-color;
+    color: var(--text-color);
+    background-color: var(--bg-color);
     -webkit-text-size-adjust: 100%;
 }
 
@@ -64,15 +64,15 @@ ul, ol, dl, figure,
   * Links
   */
  a {
-     color: $haplo-violet;
+     color: var(--link-color);
      text-decoration: none;
- 
+
      &:visited {
-         color: darken($haplo-violet, 15%);
+         color: var(--link-visited);
      }
- 
+
      &:hover {
-         color: $main-black-color;
+         color: var(--text-color);
          text-decoration: underline;
      }
  }

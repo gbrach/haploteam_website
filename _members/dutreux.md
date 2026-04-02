@@ -6,4 +6,5 @@ title: Fabien Dutreux
 picture: /assets/images/....
 email: fdutreux@unistra.fr
 position: Research Engineer
+location: SBX
 ---

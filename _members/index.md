@@ -1,27 +1,97 @@
 ---
 layout: index_page
 title: HaploTeam members
+description: "Meet the members of the HaploTeam, a yeast genetics research group at the University of Strasbourg and the University of the Basque Country."
 ---
 
 The members of our HaploTeam are listed below. Click on their names to see their profiles!
 
 <h3>Current members</h3>
+
+{% if site.show_locations %}
+<div class="halo-legend">
+  <button class="halo-filter active" data-filter="all">All</button>
+  <button class="halo-filter halo-label-sbx" data-filter="SBX">SBX</button>
+  <button class="halo-filter halo-label-bio" data-filter="BIO">BIO</button>
+  <button class="halo-filter halo-label-both" data-filter="both">Both</button>
+</div>
+{% endif %}
+
 {% assign page_array = site.members | where:"status", "current" %}
 {% include picture_grid.html pages=page_array columns=3 %}
 
-<!-- <h3>Former members</h3>
-
-{% assign page_array = site.members | where:"status", "alumni" %}
-{% include picture_grid.html pages=page_array columns=4	%} -->
+<div class="alumni-section">
+  <button class="alumni-toggle" id="alumniToggle">
+    <h3 style="display: inline; cursor: pointer;">Former members <i class="fa-solid fa-chevron-down alumni-chevron"></i></h3>
+  </button>
+  <div class="alumni-grid" id="alumniGrid">
+    {% assign page_array = site.members | where:"status", "alumni" %}
+    {% include picture_grid.html pages=page_array columns=4 %}
+  </div>
+</div>
 
 <style>
+  /* Location filter buttons */
+  .halo-filter {
+    padding: 4px 14px;
+    border: 2px solid currentColor;
+    border-radius: 20px;
+    background: transparent;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    color: var(--accent-color);
+  }
+
+  .halo-filter.halo-label-sbx { color: rgb(74, 144, 217); }
+  .halo-filter.halo-label-bio { color: rgb(231, 76, 60); }
+  .halo-filter.halo-label-both { color: rgb(155, 89, 182); }
+
+  .halo-filter.active {
+    color: #fff !important;
+  }
+  .halo-filter.active { background: var(--accent-color); border-color: var(--accent-color); }
+  .halo-filter.halo-label-sbx.active { background: rgb(74, 144, 217); border-color: rgb(74, 144, 217); }
+  .halo-filter.halo-label-bio.active { background: rgb(231, 76, 60); border-color: rgb(231, 76, 60); }
+  .halo-filter.halo-label-both.active { background: rgb(155, 89, 182); border-color: rgb(155, 89, 182); }
+
+  /* Alumni collapsible section */
+  .alumni-toggle {
+    background: none;
+    border: none;
+    padding: 0;
+    margin-top: 30px;
+    cursor: pointer;
+    display: block;
+  }
+
+  .alumni-chevron {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+  }
+
+  .alumni-chevron.open {
+    transform: rotate(180deg);
+  }
+
+  .alumni-grid {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+  }
+
+  .alumni-grid.expanded {
+    max-height: 2000px;
+  }
+
   .gallery {
     text-align: center;
   }
 
   .gallery h2 {
     font-size: 32px;
-    color: #131940;
+    color: var(--heading-color);
     margin-bottom: 20px;
   }
 
@@ -119,6 +189,44 @@ The members of our HaploTeam are listed below. Click on their names to see their
 
     overlay.addEventListener("click", function (e) {
       if (e.target === overlay) overlay.style.display = "none"; // Close when clicking outside the image
+    });
+  });
+
+  // Alumni toggle
+  document.addEventListener("DOMContentLoaded", function () {
+    var toggle = document.getElementById("alumniToggle");
+    var grid = document.getElementById("alumniGrid");
+    var chevron = toggle.querySelector(".alumni-chevron");
+
+    toggle.addEventListener("click", function() {
+      grid.classList.toggle("expanded");
+      chevron.classList.toggle("open");
+    });
+  });
+
+  // Location filter
+  document.addEventListener("DOMContentLoaded", function () {
+    const filters = document.querySelectorAll(".halo-filter");
+    const members = document.querySelectorAll(".member-grid-item");
+
+    filters.forEach(function(btn) {
+      btn.addEventListener("click", function() {
+        filters.forEach(function(b) { b.classList.remove("active"); });
+        btn.classList.add("active");
+        const filter = btn.getAttribute("data-filter");
+
+        members.forEach(function(member) {
+          var loc = member.getAttribute("data-location");
+          if (filter === "all") {
+            member.style.display = "";
+          } else if (filter === "both") {
+            member.style.display = loc === "both" ? "" : "none";
+          } else {
+            // SBX shows SBX + both, BIO shows BIO + both
+            member.style.display = (loc === filter || loc === "both") ? "" : "none";
+          }
+        });
+      });
     });
   });
 </script>

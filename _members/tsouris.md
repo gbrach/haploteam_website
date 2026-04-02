@@ -7,4 +7,5 @@ email: atsouris@unistra.fr
 picture: ../assets/images/......
 position: PhD
 twitter: andreas_tsouris
+location: SBX
 ---

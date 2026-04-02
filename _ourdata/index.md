@@ -2,6 +2,7 @@
 layout: index_page
 title: " "
 category: ourdata
+description: "Access genome datasets and research data from the HaploTeam, including the 1011 and 3034 S. cerevisiae genome projects."
 ---
 
 {% assign projects_order = "3034 <i>Saccharomyces cerevisiae</i> genomes,1011 <i>S. cerevisiae</i> genomes" | split: "," %}

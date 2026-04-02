@@ -6,4 +6,5 @@ title: Claudine Bleykasten-Grosshans
 email: bleykasten@unistra.fr
 picture: /assets/haploteam_pictures/members/bleykasten.webp
 position: Researcher
+location: SBX
 ---

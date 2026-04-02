@@ -48,7 +48,7 @@ layout: default
 
       <!-- displaying the position information -->
       <p>
-        {% assign loc = page.location | default: "SBX" %}{% if loc contains "SBX" %}🇫🇷{% endif %}{% if loc contains "BIO" %}🇪🇸{% endif %} {% if page.status == "alumni" %}Former {% endif %}<b>{{ page.position }}</b> in the HaploTeam.
+        {% if site.show_locations %}{% assign loc = page.location | default: "SBX" %}{% if loc contains "SBX" %}🇫🇷{% endif %}{% if loc contains "BIO" %}🇪🇸{% endif %} {% endif %}{% if page.status == "alumni" %}Former {% endif %}<b>{{ page.position }}</b> in the HaploTeam.
       </p>
 
       <!-- displaying additional content or bio -->

@@ -86,6 +86,10 @@ $on-laptop:        800px;
 	--nav-text: #e8e8e8;
 }
 
+// Logo theme switching: black logo for light mode, white for dark
+.logo-light { display: inline-block; }
+.logo-dark { display: none; }
+
 // Smooth theme transition
 body, .header, .footer, .paper-item, .nav > li > a, a, h1, h2, h3, h4, .caption {
 	transition: color 0.3s ease, background-color 0.3s ease;
@@ -110,13 +114,9 @@ html {
 		z-index: -1;
 	}
 
-	// make logo blend with the dark page background
-	.header img[alt="HaploTeam logo"] {
-		filter: invert(1) hue-rotate(180deg) brightness(1.2);
-		background-color: var(--bg-color);
-		border-radius: 6px;
-		padding: 4px;
-	}
+	// show white logo in dark mode
+	.logo-light { display: none !important; }
+	.logo-dark { display: inline-block !important; }
 
 	// footer link colors
 	.footer a, .footer a:hover, .footer a:visited {

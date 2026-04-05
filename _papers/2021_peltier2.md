@@ -7,6 +7,7 @@ authors:  Emilien Peltier, Charlotte Vion, Omar Abou Saada, Anne Friedrich, Jose
 journal: Frontiers in Fungal Biology
 doi_url: https://doi.org/10.3389/ffunb.2021.733513
 doi: 10.3389/ffunb.2021.733513
+PMID: 37744152
 bioRxiv: https://www.biorxiv.org/content/10.1101/2021.02.27.433177v1
 thumbnail: ../assets/papers_thumbnails/2021_peltier1.webp
 ---

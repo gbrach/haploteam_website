@@ -7,5 +7,6 @@ authors: Marta Avramova, Alice Cibrario, Emilien Peltier, Monika Coton, Emmanuel
 journal: Scientific Reports
 doi_url: https://doi.org/10.1038/s41598-018-22580-7
 doi: 10.1038/s41598-018-22580-7
+PMID: 29515178
 thumbnail: ../assets/papers_thumbnails/2018_avramova.webp
 ---

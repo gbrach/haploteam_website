@@ -1,5 +1,5 @@
 ---
-title: Influence of genetic background on the occurrence of chromosomal rearrangements <i>Saccharomyces cerevisiae</i>
+title: Influence of genetic background on the occurrence of chromosomal rearrangements in <i>Saccharomyces cerevisiae</i>
 year: 2009
 pub_date: 2009-03-06
 members: [ fritsch, schacherer, bleykasten, souciet, potier, demontigny ]

@@ -7,6 +7,7 @@ authors: The Génolevures Consortium, Jean‑Luc Souciet, Bernard Dujon, Claude 
 journal: Genome Research
 doi_url:  https://doi.org/10.1101/gr.091546.109
 doi: 10.1101/gr.091546.109
+PMID: 19525356
 thumbnail: ../assets/papers_thumbnails/2009_génovelures.webp
 ---
 

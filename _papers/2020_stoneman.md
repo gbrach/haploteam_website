@@ -7,6 +7,6 @@ authors:  Hayley R Stoneman, Russell L Wrobel, Michael Place, Michael Graham, Da
 journal: G3 Genes|Genomes|Genetics
 doi_url: https://doi.org/10.1534/g3.120.401498
 doi: 10.1534/g3.120.401498
-PMID: 
+PMID: 32963084
 thumbnail: ../assets/papers_thumbnails/2020_stoneman.webp
 ---

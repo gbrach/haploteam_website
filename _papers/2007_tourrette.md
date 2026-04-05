@@ -7,6 +7,7 @@ authors: Yves Tourrette, Joseph Schacherer, Emilie Fritsch, Serge Potier, Jean-L
 journal: Molecular Microbiology
 doi_url:  https://doi.org/10.1111/j.1365-2958.2007.05660.x
 doi: 10.1111/j.1365-2958.2007.05660.x
+PMID: 17493124
 thumbnail: ../assets/papers_thumbnails/2007_tourrette.webp
 ---
 

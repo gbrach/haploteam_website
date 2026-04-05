@@ -4,7 +4,7 @@ year: 2016
 pub_date: 2016-01-05
 members: [ freel, friedrich, sarilar, devillers, neuveglise, schacherer ]
 authors: Kelle C Freel, Anne Friedrich, Véronique Sarilar, Hugo Devillers, Cécile Neuvéglise, Joseph Schacherer
-journal: Genome Biol Evol
+journal: Genome Biology and Evolution
 doi_url: https://doi.org/10.1093/gbe/evv262
 doi: 10.1093/gbe/evv262
 PMID: 26733577

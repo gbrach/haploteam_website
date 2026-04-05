@@ -3,7 +3,7 @@ title: Comprehensive polymorphism survey elucidates population structure of <i>S
 year: 2009
 pub_date: 2009-03-19
 members: [ schacherer ]
-authors: Joseph Schacherer, Joshua A. Shapiro, Daniel M. Ruderfer, Leonid Kruglyak
+authors: Joseph Schacherer, Joshua A. Shapiro, Douglas M. Ruderfer, Leonid Kruglyak
 journal: Nature
 doi_url: https://doi.org/10.1038/nature07670
 doi: 10.1038/nature07670

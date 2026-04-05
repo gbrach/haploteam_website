@@ -2,7 +2,7 @@
 title: Genetic Basis of Ammonium Toxicity Resistance in a Sake Strain of Yeast
 year: 2013
 pub_date: 2013-04-09
-members: [ schacherer ]
+members: [ reisser, schacherer ]
 authors: Cyrielle Reisser, Cynthia Dick, Leonid Kruglyak, David Botstein, Joseph Schacherer, David C. Hess
 journal: G3 Genes|Genomes|Genetics
 doi_url: https://doi.org/10.1534/g3.113.005884

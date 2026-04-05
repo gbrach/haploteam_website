@@ -8,7 +8,7 @@ journal: Nature
 bioRxiv: 
 doi_url: https://doi.org/10.1038/s41586-025-09637-0
 doi: 10.1038/s41586-025-09637-0
-PMID:
+PMID: 41094142
 thumbnail: ../assets/papers_thumbnails/2025_loegler2.webp
 zenodo:
   - name: "Scripts used for this work are available on Zenodo"

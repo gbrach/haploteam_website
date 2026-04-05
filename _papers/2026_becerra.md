@@ -8,7 +8,7 @@ journal: PNAS
 bioRxiv: 
 doi_url: https://doi.org/10.1073/pnas.2526682123
 doi: 10.1073/pnas.2526682123
-PMID:
+PMID: 41505518
 thumbnail: ../assets/papers_thumbnails/2026_becerra.webp
 mainpage: true
 ---

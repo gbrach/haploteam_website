@@ -7,5 +7,6 @@ authors:  Véronique Sarilar, Claudine Bleykasten-Grosshans, Cécile Neuvéglise
 journal: Genome Biology and Evolution
 doi_url: https://doi.org/10.1093/gbe/evu273
 doi: 10.1093/gbe/evu273
+PMID: 25532815
 thumbnail: ../assets/papers_thumbnails/2014_sarilar.webp
 ---

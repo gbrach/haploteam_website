@@ -7,6 +7,7 @@ authors:  Emilien Peltier, Sabrina Bibi-Triki, Fabien Dutreux, Claudia Caradec, 
 journal: G3 Genes|Genomes|Genetics
 doi_url:  https://doi.org/10.1093/g3journal/jkab242
 doi: 10.1093/g3journal/jkab242
+PMID: 34544138
 bioRxiv: https://doi.org/10.1101/2021.04.07.438839
 thumbnail: ../assets/papers_thumbnails/2021_peltier.webp
 ---

@@ -7,5 +7,6 @@ authors: Chris Eberlein, Omar Abou Saada, Anne Friedrich, Warren Albertin and Jo
 journal: Genome Research
 doi_url:  https://www.genome.org/cgi/doi/10.1101/gr.275380.121
 doi: 10.1101/gr.275380.121
+PMID: 34815309
 thumbnail: ../assets/papers_thumbnails/2021_eberlein.webp
 ---

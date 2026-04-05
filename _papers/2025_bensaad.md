@@ -8,7 +8,7 @@ journal: FEMS Yeast Research
 bioRxiv: 
 doi_url: https://doi.org/10.1093/femsyr/foaf005
 doi: 10.1093/femsyr/foaf005
-PMID:
+PMID: 39904552
 thumbnail: ../assets/papers_thumbnails/2025_bensaad.webp
 mainpage: true
 ---

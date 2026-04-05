@@ -1,5 +1,5 @@
 ---
-title: Genetic Basis of Ammonium Toxicity Resistance in a Sake Strain of Yeast
+title: "Genetic Basis of Ammonium Toxicity Resistance in a Sake Strain of Yeast: A Mendelian Case"
 year: 2013
 pub_date: 2013-04-09
 members: [ reisser, schacherer ]

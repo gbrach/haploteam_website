@@ -8,7 +8,7 @@ journal: EMBO Reports
 bioRxiv: 
 doi_url: https://doi.org/10.1038/s44319-024-00353-w
 doi: 10.1038/s44319-024-00353-w
-PMID:
+PMID: 39747660
 thumbnail: ../assets/papers_thumbnails/2025_dutta.webp
 mainpage: true
 ---

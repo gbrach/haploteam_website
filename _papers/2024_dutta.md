@@ -8,7 +8,7 @@ journal: PLOS Genetics
 bioRxiv: https://www.biorxiv.org/content/10.1101/2024.02.13.580081v1
 doi_url: https://doi.org/10.1371/journal.pgen.1011426
 doi: 10.1371/journal.pgen.1011426
-PMID:
+PMID: 39325820
 thumbnail: ../assets/papers_thumbnails/2024_dutta.webp
 mainpage: true
 ---

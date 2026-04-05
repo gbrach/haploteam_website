@@ -4,7 +4,7 @@ year: 2020
 pub_date: 2020-04-22
 members: [ gounot, freel, friedrich, schacherer ]
 authors: Jean-Sébastien Gounot, Cécile Neuvéglise, Kelle C Freel, Hugo Devillers, Jure Piškur, Anne Friedrich, Joseph Schacherer
-journal: Molecular Biology and Evolution
+journal: Genome Biology and Evolution
 doi_url: https://doi.org/10.1093/gbe/evaa077
 doi: 10.1093/gbe/evaa077
 PMID: 32302403

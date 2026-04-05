@@ -7,7 +7,7 @@ authors: Andreas Tsouris, Téo Fournier, Anne Friedrich, Jing Hou, Maitreya J. D
 journal: PLOS Genetics
 doi_url: https://doi.org/10.1371/journal.pgen.1011119
 doi: 10.1371/journal.pgen.1011119
-PMID:
+PMID: 38236897
 thumbnail: ../assets/papers_thumbnails/2024_tsouris.webp
 mainpage: true
 ---

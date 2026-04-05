@@ -6,6 +6,7 @@ members: [ dutta, dutreux, schacherer ]
 authors:  Abhishek Dutta, Fabien Dutreux, Joseph Schacherer
 journal: Molecular Biology and Evolution
 doi: 10.1093/molbev/msac214
+doi_url: https://doi.org/10.1093/molbev/msac214
 PMID: 36205042
 bioRxiv: 10.1101/2022.05.23.493037v1
 thumbnail: ../assets/papers_thumbnails/2022_dutta.webp

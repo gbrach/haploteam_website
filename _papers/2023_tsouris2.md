@@ -7,7 +7,7 @@ authors: Andreas Tsouris, Gauthier Brach, Joseph Schacherer, Jing Hou
 journal: Cell Genomics
 doi_url: https://doi.org/10.1016/j.xgen.2023.100459
 doi: 10.1016/j.xgen.2023.100459
-PMID:
+PMID: 38190102
 bioRxiv: https://www.biorxiv.org/content/10.1101/2023.07.21.550013v1
 thumbnail: ../assets/papers_thumbnails/2023_tsouris2.webp
 mainpage: true

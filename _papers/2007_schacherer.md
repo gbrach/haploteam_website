@@ -7,6 +7,7 @@ authors: Joseph Schacherer, Yves Tourrette, Serge Potier, Jean-Luc Souciet, Jack
 journal: DNA Repair
 doi_url:  https://doi.org/10.1016/j.dnarep.2007.04.006
 doi: 10.1016/j.dnarep.2007.04.006
+PMID: 17544927
 thumbnail: ../assets/papers_thumbnails/2007_schacherer.webp
 ---
 

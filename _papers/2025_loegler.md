@@ -8,7 +8,7 @@ journal: Nature Communications
 bioRxiv: 
 doi_url: https://doi.org/10.1038/s41467-025-60706-4
 doi: 10.1038/s41467-025-60706-4
-PMID:
+PMID: 40595487
 thumbnail: ../assets/papers_thumbnails/2025_loegler.webp
 mainpage: true
 ---

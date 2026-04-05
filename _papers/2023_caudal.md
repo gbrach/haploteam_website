@@ -7,7 +7,7 @@ authors: Élodie Caudal, Victor Loegler, Fabien Dutreux, Nikolaos Vakirlis, Éli
 journal: Nature Genetics
 doi_url: https://doi.org/10.1038/s41588-024-01769-9
 doi: 10.1038/s41588-024-01769-9
-PMID: 
+PMID: 38778243
 bioRxiv: 10.1101/2023.05.17.541122 
 thumbnail: ../assets/papers_thumbnails/2023_caudal.webp
 mainpage: true

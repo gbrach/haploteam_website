@@ -8,7 +8,7 @@ journal: G3 Genes|Genomes|Genetics
 bioRxiv: https://www.biorxiv.org/content/10.1101/2024.09.16.613241v1
 doi_url: https://doi.org/10.1093/g3journal/jkae245
 doi: 10.1093/g3journal/jkae245
-PMID:
+PMID: 39559979
 thumbnail: "../assets/papers_thumbnails/2024_loegler.webp"
 mainpage: true
 zenodo:

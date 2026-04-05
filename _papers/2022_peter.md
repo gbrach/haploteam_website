@@ -4,7 +4,7 @@ year: 2022
 pub_date: 2022-05-30
 members: [ peter, friedrich, schacherer ]
 authors: Jackson Peter, Anne Friedrich, Gianni Liti, Joseph Schacherer
-journal: Philosophical Proceedings of the Royal Society B
+journal: Philosophical Transactions of the Royal Society B
 doi_url: https://doi.org/10.1098/rstb.2020.0514
 doi: 10.1098/rstb.2020.0514
 PMID: 35634920

@@ -8,7 +8,7 @@ journal: Cell Genomics
 bioRxiv: 
 doi_url: https://doi.org/10.1016/j.xgen.2025.101067
 doi: 10.1016/j.xgen.2025.101067
-PMID:
+PMID: 41260225
 thumbnail: ../assets/papers_thumbnails/2025_loegler3.webp
 mainpage: true
 ---

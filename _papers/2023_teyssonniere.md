@@ -7,7 +7,7 @@ authors: Elie Marcel Teyssonnière, Pauline Trébulle, Julia Muenzner, Victor Lo
 journal: PNAS
 doi_url: https://doi.org/10.1073/pnas.2319211121
 doi: 10.1073/pnas.2319211121
-PMID:
+PMID: 38696467
 bioRxiv: https://www.biorxiv.org/content/10.1101/2023.09.18.558197
 thumbnail: ../assets/papers_thumbnails/2023_teyssonniere.webp
 mainpage: true

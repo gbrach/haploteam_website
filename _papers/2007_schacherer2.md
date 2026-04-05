@@ -3,7 +3,7 @@ title: Genome-wide analysis of nucleotide-level variation in commonly used <i>Sa
 year: 2007
 pub_date: 2007-03-28
 members: [ schacherer ]
-authors: Joseph Schacherer, Daniel M. Ruderfer, David Gresham, Kruglyak Leonid, Jun-Yi Leu, Leonid Kruglyak
+authors: Joseph Schacherer, Douglas M. Ruderfer, David Gresham, Kara Dolinski, David Botstein, Leonid Kruglyak
 journal: PLoS One
 doi_url: https://doi.org/10.1371/journal.pone.0000322
 doi: 10.1371/journal.pone.0000322

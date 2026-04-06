@@ -10,37 +10,37 @@ layout: default
       <div class="icons mb-3">
         <!-- adding icons for contact information and links -->
         {% if page.email %}
-          <a href="mailto:{{ page.email | encode_email }}">
+          <a href="mailto:{{ page.email | encode_email }}" aria-label="Email">
             <i class="fas fa-envelope"></i>
           </a>
         {% endif %}
         {% if page.twitter %}
-          <a href="https://x.com/{{ page.twitter }}" target="_blank">
+          <a href="https://x.com/{{ page.twitter }}" target="_blank" aria-label="X (Twitter)">
             <i class="fa-brands fa-x-twitter"></i>
           </a>
         {% endif %}
         {% if page.orcid %}
-          <a href="https://orcid.org/{{ page.orcid }}" target="_blank">
+          <a href="https://orcid.org/{{ page.orcid }}" target="_blank" aria-label="ORCID">
             <i class="ai ai-orcid"></i>
           </a>
         {% endif %}
         {% if page.google_scholar %}
-          <a href="{{ page.google_scholar }}" target="_blank">
+          <a href="{{ page.google_scholar }}" target="_blank" aria-label="Google Scholar">
             <i class="ai ai-google-scholar"></i>
           </a>
         {% endif %}
         {% if page.website %}
-          <a href="{{ page.website }}" target="_blank">
+          <a href="{{ page.website }}" target="_blank" aria-label="Website">
             <i class="fas fa-globe"></i>
           </a>
         {% endif %}
         {% if page.github %}
-          <a href="https://github.com/{{ page.github }}" target="_blank">
+          <a href="https://github.com/{{ page.github }}" target="_blank" aria-label="GitHub">
             <i class="fab fa-github"></i>
           </a>
         {% endif %}
         {% if page.thesis %}
-          <a href="{{ page.thesis }}" target="_blank">
+          <a href="{{ page.thesis }}" target="_blank" aria-label="Thesis">
             <i class="fas fa-graduation-cap"></i>
           </a>
         {% endif %}

@@ -20,11 +20,16 @@
     <meta name="twitter:site" content="@{{ site.x_username }}">
     <meta name="twitter:image" content="{{ site.url }}/assets/images/haplologo.webp">
 
+    {% if page.category == "home" %}
+    <link rel="preload" as="image" href="{{ site.baseurl }}/assets/haploteam_pictures/gallery/ekiden2025_cropped.webp" fetchpriority="high">
+    {% endif %}
+
     <link rel="stylesheet" type='text/css' href="{{ "/css/bootstrap.min.css" | prepend: site.baseurl }}">
     <link rel="stylesheet" type='text/css' href="{{ "/css/main.css" | prepend: site.baseurl }}">
 
-    <script src="https://kit.fontawesome.com/5f5a3428ff.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="{{ "/css/academicons.css" | prepend: site.baseurl }}" />
+    <script async src="https://kit.fontawesome.com/5f5a3428ff.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ "/css/academicons.css" | prepend: site.baseurl }}" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="{{ "/css/academicons.css" | prepend: site.baseurl }}" /></noscript>
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
     <!-- Dark mode: apply saved theme (or OS preference) before paint to avoid flash -->

@@ -30,7 +30,7 @@ description: "Publications from the HaploTeam research group on yeast population
     <p id="noResults" style="display: none;">No publications found.</p>
 
     <!-- List of Publications -->
-    <ul id="publicationsList">
+    <div id="publicationsList">
         {% for year in (2000..this_year) reversed %}
             {% assign papers_array = site.papers | where: "year", year | sort: 'pub_date' | reverse %}
             {% for paper in papers_array %}
@@ -39,13 +39,13 @@ description: "Publications from the HaploTeam research group on yeast population
                         <h3 data-year="{{ paper.year }}">{{ paper.year }}</h3>
                     {% endif %}
                     {% assign last = paper.year %}
-                    <li class="publication-item" data-year="{{ paper.year }}">
+                    <div class="publication-item" data-year="{{ paper.year }}">
                         {% include paper_builder.html data=paper %}
-                    </li>
+                    </div>
                 {% endif %}
             {% endfor %}
         {% endfor %}
-    </ul>
+    </div>
 </div>
 
 <!-- Back to top button -->

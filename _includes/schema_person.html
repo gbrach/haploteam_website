@@ -1,0 +1,19 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ page.title }}",
+  "jobTitle": "{{ page.position }}",
+  "url": "{{ page.url | prepend: site.url }}",
+  {% if page.picture %}"image": "{{ page.picture | prepend: site.url }}",{% endif %}
+  {% if page.email %}"email": "{{ page.email }}",{% endif %}
+  "affiliation": {
+    "@type": "ResearchOrganization",
+    "name": "HaploTeam",
+    "url": "{{ site.url }}"
+  }{% assign same_as = "" | split: "" %}{% if page.orcid %}{% assign link = "https://orcid.org/" | append: page.orcid %}{% assign same_as = same_as | push: link %}{% endif %}{% if page.github %}{% assign link = "https://github.com/" | append: page.github %}{% assign same_as = same_as | push: link %}{% endif %}{% if page.google_scholar %}{% assign same_as = same_as | push: page.google_scholar %}{% endif %}{% if page.twitter %}{% assign link = "https://x.com/" | append: page.twitter %}{% assign same_as = same_as | push: link %}{% endif %}{% if same_as.size > 0 %},
+  "sameAs": [{% for link in same_as %}
+    "{{ link }}"{% unless forloop.last %},{% endunless %}{% endfor %}
+  ]{% endif %}
+}
+</script>

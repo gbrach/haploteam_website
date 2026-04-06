@@ -1,0 +1,25 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ResearchOrganization",
+  "name": "HaploTeam",
+  "alternateName": "The HaploTeam",
+  "url": "{{ site.url }}",
+  "logo": "{{ site.url }}/assets/images/haplologo.webp",
+  "description": "{{ site.description | strip_newlines | strip }}",
+  "parentOrganization": {
+    "@type": "CollegeOrUniversity",
+    "name": "University of Strasbourg",
+    "url": "https://www.unistra.fr"
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Joseph Schacherer",
+    "jobTitle": "Professor",
+    "email": "{{ site.email }}"
+  },
+  "sameAs": [
+    "https://x.com/{{ site.x_username }}"
+  ]
+}
+</script>

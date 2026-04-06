@@ -3,9 +3,13 @@
 <div class="papers-formatting">
   <div class="paper-item">
     <div class="paper-thumbnail">
-      <a data-title="{{ include.data.title }}">
-        <img src="{{ include.data.thumbnail }}" alt="{{ include.data.title }} thumbnail" loading="lazy">
+      {% if include.data.doi %}
+      <a href="https://doi.org/{{ include.data.doi }}" target="_blank" aria-label="{{ include.data.title }}">
+        <img src="{{ include.data.thumbnail }}" alt="" loading="lazy">
       </a>
+      {% else %}
+      <img src="{{ include.data.thumbnail }}" alt="" loading="lazy">
+      {% endif %}
     </div>
 
     <div class="paper-details">

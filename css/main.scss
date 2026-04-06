@@ -10,6 +10,7 @@
 			url('https://s3.unistra.fr/master/common/assets/fonts/unistra-font/1.0.0/fonts/UnistraA-Regular.svg?AWSAccessKeyId=M2M78RKXPAP75Y692QZX&Signature=DthzEcdekNlkte5hDjh9lwx5u1A%3D&Expires=1870941571') format('svg');
 	font-weight: 400;
 	font-style: normal;
+	font-display: swap;
 }
 
 // important variables
@@ -268,7 +269,7 @@ a {
 .multichoice_bubbles {
 	margin: 0px 0;
 
-	h3 {
+	h2 {
 		color: var(--heading-color);
 		font-weight: 600;
 		margin: 0px 0 10px;
@@ -627,10 +628,9 @@ h3 {
 		margin: 10px 0px 10px 40px;
 	}
 
-	ul {
+	#publicationsList {
 		padding: 0;
 		margin: 0 -20px;
-		list-style: none; /* Remove bullets */
 	}
 
 }
@@ -837,7 +837,7 @@ $light-off-opacity: 0.3;
     }
 
     // --- section headings on multichoice / publications ---
-    .multichoice_bubbles h3 {
+    .multichoice_bubbles h2 {
         font-size: $larger-font-size;
     }
 

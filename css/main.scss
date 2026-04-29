@@ -96,24 +96,16 @@ body, .header, .footer, .paper-item, .nav > li > a, a, h1, h2, h3, h4, .caption 
 	transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-// This block is used to set the gray backgroud and the main white center page as well as the font color
+// The animated colony canvas (assets/js/colonies_background.js) paints the
+// dark navy gradient behind the page; html/body set a matching solid color
+// as a fallback for the brief moment before the script runs and for no-JS.
 html {
-	// background-color: $haplo-dark-blue; /* sides color — disabled, using background-image instead */
-	background-image: url('{{ site.baseurl }}/assets/background.webp');
+	background-color: $haplo-dark-blue;
 	scroll-behavior: smooth;
 }
 
 [data-theme="dark"] {
-	background-image: url('{{ site.baseurl }}/assets/background.webp');
-	background-color: #111;
-	// darken the background image
-	&::before {
-		content: '';
-		position: fixed;
-		top: 0; left: 0; right: 0; bottom: 0;
-		background: rgba(0, 0, 0, 0.6);
-		z-index: -1;
-	}
+	background-color: #101114;
 
 	// show white logo in dark mode
 	.logo-light { display: none !important; }
@@ -199,14 +191,36 @@ a {
 	color: var(--nav-text); /* pill font color */
 	padding: 15px 10px; /* pill padding, vertical and horizontal */
 	text-decoration: none;
+	position: relative;
+	transition: color 0.25s ease;
 }
 
-.nav>li>a:hover {
+.nav > li > a::after {
+	content: "";
+	position: absolute;
+	left: 10px;
+	right: 10px;
+	bottom: 6px;
+	height: 3px;
+	background: var(--accent-color);
+	border-radius: 2px;
+	transform: scaleX(0);
+	transform-origin: center;
+	transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.nav > li > a:hover {
 	text-decoration: none;
 	color: var(--accent-color);
-	border-bottom: solid var(--accent-color) 4px; /* pill underline */
-	border-radius: 4px;
 	background-color: transparent;
+}
+
+.nav > li > a:hover::after {
+	transform: scaleX(1);
+}
+
+.nav-pills li.active a::after {
+	display: none;
 }
 
 .nav-pills li.active a {
@@ -232,6 +246,29 @@ a {
 		font-size: $title-font-size*.8;
 		color: var(--heading-color);
 		text-align: center;
+		animation: hero-title-in 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+	}
+}
+
+// Home hero entrance
+@keyframes hero-title-in {
+	from { opacity: 0; transform: translateY(18px); }
+	to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes hero-image-in {
+	from { opacity: 0; transform: scale(1.035); }
+	to   { opacity: 1; transform: scale(1); }
+}
+
+.main-page .containerpluslogo img {
+	animation: hero-image-in 1.1s 0.15s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.first_part_mainpage h1,
+	.main-page .containerpluslogo img {
+		animation: none;
 	}
 }
 
@@ -397,11 +434,13 @@ h3 {
 		border-radius: 8px;
 		object-fit: cover;
 		opacity: 0.25; // lower = more white wash = name pops more
-		transition: opacity 0.2s ease;
+		transition: opacity 0.25s ease, box-shadow 0.35s ease, transform 0.35s ease;
 	}
 
 	a:hover .responsive-pic-member {
 		opacity: 1.0;
+		transform: scale(1.02);
+		box-shadow: 0 0 28px 8px rgba(236, 232, 218, 0.45);
 	}
 
 	// location halos — glow only, no hard ring

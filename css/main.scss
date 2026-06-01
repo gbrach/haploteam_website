@@ -444,18 +444,24 @@ h3 {
 	}
 
 	// location halos — glow only, no hard ring
-	.halo-sbx {
+	// translateZ(0) promotes each halo to its own GPU layer so the blurred
+	// shadow is rasterized once and just composited on scroll (no repaint jank)
+	.halo-sbx,
+	.halo-bio,
+	.halo-both {
 		border-radius: 8px;
+		transform: translateZ(0);
+	}
+
+	.halo-sbx {
 		box-shadow: 0 0 8px 3px rgba(74, 144, 217, 0.25); // Strasbourg: blue
 	}
 
 	.halo-bio {
-		border-radius: 8px;
 		box-shadow: 0 0 8px 3px rgba(231, 76, 60, 0.25); // Bilbao: red
 	}
 
 	.halo-both {
-		border-radius: 8px;
 		box-shadow: 0 0 8px 3px rgba(155, 89, 182, 0.25); // both: purple
 	}
 

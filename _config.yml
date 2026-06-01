@@ -8,7 +8,7 @@ url: https://www.haploteam.org # the base hostname & protocol for your site
 # baseurl: /haploteam/ # the subpath of your site, e.g. /blog/
 x_username: haploteam # jo_schacherer
 array: []
-show_locations: false # set to true to enable SBX/BIO halos and location filter buttons
+show_locations: true # set to true to enable SBX/BIO halos and location filter buttons
 
 # Build settings
 markdown: kramdown

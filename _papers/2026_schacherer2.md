@@ -6,7 +6,7 @@ members: [ schacherer ]
 authors: Joseph Schacherer
 journal: Genetics
 doi_url: doi.org/10.1093/genetics/iyag149
-doi: doi.org/10.1093/genetics/iyag149
+doi: 10.1093/genetics/iyag149
 PMID:
 thumbnail: ../assets/papers_thumbnails/2026_schacherer2.webp
 mainpage: false

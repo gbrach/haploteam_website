@@ -6,7 +6,7 @@ title: Victor Loegler
 picture: /assets/haploteam_pictures/members/loegler.webp
 joined_lab: 2021
 left_lab:
-email: loegler.victor@unistra.fr
+email: vloegler@cicbiogune.es
 position: Postdoctoral fellow
 location: BIO
 ---

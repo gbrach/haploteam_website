@@ -1,10 +1,10 @@
 ---
 layout: members
 status: current
-rank: 3
+rank: 2
 title: Abhishek Dutta
 picture: /assets/haploteam_pictures/members/dutta.webp
-position: Postdoctoral fellow
+position: Researcher
 email: a.dutta@unistra.fr
 location: SBX
 ---

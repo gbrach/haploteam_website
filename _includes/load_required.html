@@ -27,9 +27,7 @@
     <link rel="stylesheet" type='text/css' href="{{ "/css/bootstrap.min.css" | prepend: site.baseurl }}">
     <link rel="stylesheet" type='text/css' href="{{ "/css/main.css" | prepend: site.baseurl }}">
 
-    <script defer src="{{ "/assets/js/colonies_background.js" | prepend: site.baseurl }}"></script>
-
-    <script async src="https://kit.fontawesome.com/5f5a3428ff.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ "/assets/fa/css/all.min.css" | prepend: site.baseurl }}">
     <link rel="stylesheet" href="{{ "/css/academicons.css" | prepend: site.baseurl }}" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="{{ "/css/academicons.css" | prepend: site.baseurl }}" /></noscript>
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
@@ -72,6 +70,4 @@
       });
     </script>
 
-    {% include google_analytics.html %}
-    {% include schema_organization.html %}
 </head>

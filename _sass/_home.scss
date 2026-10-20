@@ -18,8 +18,7 @@
 }
 
 .paper-item:hover {
-  background-color: var(--paper-card-bg);
-  filter: brightness(0.95);
+  background-color: color-mix(in srgb, var(--paper-card-bg) 95%, black);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 

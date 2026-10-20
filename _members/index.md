@@ -237,6 +237,26 @@ The members of our HaploTeam are listed below. Click on their names to see their
   <div class="row">
     <div class="col-xs-3">
       <div class="image-container">
+        <img class="gallery-image" src="../assets/haploteam_pictures/gallery/IGBMC_2026.webp" alt="IGBMC 2026" loading="lazy">
+        <span class="image-date">April 2026</span>
+      </div>
+    </div>
+    <div class="col-xs-3">
+      <div class="image-container">
+        <img class="gallery-image" src="../assets/haploteam_pictures/gallery/ekiden2026.webp" alt="Ekiden 2026" loading="lazy">
+        <span class="image-date">April 2026</span>
+      </div>
+    </div>
+    <div class="col-xs-3">
+      <div class="image-container">
+        <img class="gallery-image" src="../assets/haploteam_pictures/gallery/ekiden2025_cropped.webp" alt="Ekiden 2025" loading="lazy">
+        <span class="image-date">April 2025</span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">
+      <div class="image-container">
         <img class="gallery-image" src="../assets/haploteam_pictures/gallery/ekiden2024.webp" alt="Ekiden 2024" loading="lazy">
         <span class="image-date">April 2024</span>
       </div>

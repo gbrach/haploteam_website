@@ -1,0 +1,29 @@
+{% assign paper = include.data %}<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "{{ paper.title | strip_html }}",
+  "datePublished": "{{ paper.pub_date }}",
+  {% if paper.journal %}"isPartOf": {
+    "@type": "Periodical",
+    "name": "{{ paper.journal }}"
+  },{% endif %}
+  {% if paper.doi %}"identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "DOI",
+    "value": "{{ paper.doi }}"
+  },
+  "url": "https://doi.org/{{ paper.doi }}",{% endif %}
+  "author": [{% assign author_list = paper.authors | replace: " and ", ", " | replace: " & ", ", " | split: ", " %}{% for author in author_list %}
+    {
+      "@type": "Person",
+      "name": "{{ author | strip }}"
+    }{% unless forloop.last %},{% endunless %}{% endfor %}
+  ],
+  "publisher": {
+    "@type": "Organization",
+    "name": "HaploTeam",
+    "url": "{{ site.url }}"
+  }
+}
+</script>

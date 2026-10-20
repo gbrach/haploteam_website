@@ -1,6 +1,6 @@
 ---
 layout: members
-status: current
+status: alumni
 rank: 4
 title: Lucie Leblond
 picture: /assets/haploteam_pictures/members/leblond.webp

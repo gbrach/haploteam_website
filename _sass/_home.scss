@@ -12,15 +12,17 @@
   background-color: var(--paper-card-bg);
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.3s ease,
+              background-color 0.3s ease;
   max-height: none;
   overflow: visible;
 }
 
 .paper-item:hover {
   background-color: var(--paper-card-bg);
-  filter: brightness(0.95);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
 }
 
 .paper-thumbnail {

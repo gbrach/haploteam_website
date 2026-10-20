@@ -1,25 +1,54 @@
 <script>
 (function() {
-    // adding fade-in class to target elements
     var selectors = ['.paper-item', '.member-card', '.image-container'];
+    var STAGGER_MS = 70;
+    var MAX_STAGGER_STEPS = 8; // cap the delay so a full page of cards still feels snappy
+
     selectors.forEach(function(sel) {
         document.querySelectorAll(sel).forEach(function(el) {
             el.classList.add('fade-in-item');
         });
     });
 
-    // triggering fade-in as elements enter the viewport
+    // stagger items that enter the viewport in the same observer callback
     var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target);
-            }
+        var visible = entries
+            .filter(function(e) { return e.isIntersecting; })
+            .sort(function(a, b) {
+                return a.boundingClientRect.top - b.boundingClientRect.top
+                    || a.boundingClientRect.left - b.boundingClientRect.left;
+            });
+        visible.forEach(function(entry, i) {
+            var step = Math.min(i, MAX_STAGGER_STEPS);
+            entry.target.style.transitionDelay = (step * STAGGER_MS) + 'ms';
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
         });
     }, { threshold: 0.08 });
 
     document.querySelectorAll('.fade-in-item').forEach(function(el) {
         observer.observe(el);
     });
+
+    // Hero image parallax (home page only)
+    var heroImg = document.querySelector('.main-page .containerpluslogo img');
+    var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (heroImg && !reducedMotion) {
+        var heroTicking = false;
+        function updateHeroParallax() {
+            var y = window.scrollY || window.pageYOffset;
+            // only apply while the hero is roughly in view to avoid needless work
+            if (y < window.innerHeight * 1.2) {
+                heroImg.style.transform = 'translateY(' + (y * 0.18) + 'px)';
+            }
+            heroTicking = false;
+        }
+        window.addEventListener('scroll', function() {
+            if (!heroTicking) {
+                requestAnimationFrame(updateHeroParallax);
+                heroTicking = true;
+            }
+        }, { passive: true });
+    }
 })();
 </script>

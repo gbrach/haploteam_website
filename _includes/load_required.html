@@ -27,6 +27,8 @@
     <link rel="stylesheet" type='text/css' href="{{ "/css/bootstrap.min.css" | prepend: site.baseurl }}">
     <link rel="stylesheet" type='text/css' href="{{ "/css/main.css" | prepend: site.baseurl }}">
 
+    <script defer src="{{ "/assets/js/colonies_background.js" | prepend: site.baseurl }}"></script>
+
     <link rel="stylesheet" href="{{ "/assets/fa/css/all.min.css" | prepend: site.baseurl }}">
     <link rel="stylesheet" href="{{ "/css/academicons.css" | prepend: site.baseurl }}" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="{{ "/css/academicons.css" | prepend: site.baseurl }}" /></noscript>
@@ -70,4 +72,5 @@
       });
     </script>
 
+    {% include schema_organization.html %}
 </head>

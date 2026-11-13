@@ -1,14 +1,15 @@
 ---
 layout: members
 status: current
-rank: 6
+rank: 3
 title: Gauthier Brach
 picture: /assets/haploteam_pictures/members/brach.webp
 email: g.brach@unistra.fr
-position: PhD candidate #M1, M2
+position: Postdoctoral fellow
 github: gbrach
 orcid: 0009-0004-7263-6013
-location: SBX
+location: Both
+thesis: https://theses.fr/s347372
 ---
 
 If there is an issue with the website, don't hesitate to email me!

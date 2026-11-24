@@ -1,7 +1,7 @@
 ---
 layout: members
 status: current
-rank: 3
+rank: 3.1
 title: Victor Loegler
 picture: /assets/haploteam_pictures/members/loegler.webp
 joined_lab: 2021
